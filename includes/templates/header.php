@@ -50,7 +50,7 @@
 
                 <nav class="navegacion-principal clearfix">
                     <a href="/tecnicatura/admin/login.php">Admin</a>
-                    <a href="conferencia.php">Carreras</a>
+                    <a href="carreras.php">Carreras</a>
                     <a href="calendario.php">Alumnos</a>
                     <a href="invitados.php">Noticias</a>
                     <a href="registro.php">Contacto</a>
@@ -73,11 +73,11 @@
                         <div class="clearfix">
                             <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
                             <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Buenos Aires, AR</p>
-                        </div>
+                        </div><!--.informacion-evento-->
 
-                        <h1 class="nombre-sitio">Tech Camp</h1>
-                        <p class="slogan">La mejor conferencia sobre <span>tecnologia</span></p>
-                    </div> <!--.informacion-evento-->
+                        <h1 class="nombre-sitio">ifts n°4</h1>
+                        <p class="slogan"><span>Instituto de Formacion Tecnica Superior</span></p>
+                    </div>
 
                 </div>
             </div><!--.hero-->

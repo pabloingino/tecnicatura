@@ -1,17 +1,17 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
         <section class="seccion contenedor">
-            <h2>La mejor conferencia  de diseño web en español</h2>
+            <h2>Tecnicatura Superior En Analisis de Sistemas</h2>
             <p>
               Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
             </p>
         </section> <!--seccion-->
 
-    
 
-        <section class="seccion contenedor">
+
+        <!-- <section class="seccion contenedor">
               <h2>Galería de fotos</h2>
-              
+
               <div class="galeria">
                   <a href="img/galeria/01.jpg" data-lightbox="galeria">
                       <img src="img/galeria/thumbs/01.jpg">
@@ -44,7 +44,7 @@
                       <img src="img/galeria/thumbs/10.jpg">
                   </a>
               </div>
-        </section>
-        
-        
-    <?php include_once 'includes/templates/footer.php'; ?>  
+        </section> -->
+
+
+    <?php include_once 'includes/templates/footer.php'; ?>
