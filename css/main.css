@@ -186,7 +186,8 @@ ul {
   padding: 0;
 }
 .button:hover {
-  background-color: #e33000;
+  background-color: #ffffff;
+  color: #0b9444; 
 }
 .float-right {
   float: right;
@@ -962,6 +963,7 @@ div.dia {
   border: 2px solid #e1e1e1;
   transition: all .3s ease;
 }
+
 @media only screen and (min-width:768px) {
   div.dia {
     width: 33.3%;
@@ -1079,6 +1081,8 @@ table.registrados tr:nth-child(4n),
 table.registrados tr:nth-child(4n-1) {
   background-color: #dcdcdc;
 }
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
