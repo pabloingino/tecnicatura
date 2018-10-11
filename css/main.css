@@ -958,7 +958,7 @@ div.calendario::after {
   content: '';
 }
 div.dia {
-  width: 50%;
+  width: 100%;
   float: left;
   border: 2px solid #e1e1e1;
   transition: all .3s ease;
@@ -966,7 +966,7 @@ div.dia {
 
 @media only screen and (min-width:768px) {
   div.dia {
-    width: 33.3%;
+    width: 20%;
     min-height: 240px;
     padding-top: 20px;
   }

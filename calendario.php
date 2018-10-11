@@ -9,13 +9,13 @@
               <?php
                   try {
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, nombre_invitado, apellido_invitado ";
-                    $sql .= "FROM eventos ";
-                    $sql .= "INNER JOIN categoria_evento ";
-                    $sql .= "ON eventos.id_cat_evento=categoria_evento.id_categoria ";
-                    $sql .= "INNER JOIN invitados ";
-                    $sql .= "ON eventos.id_inv=invitados.invitado_id ";
-                    $sql .= "ORDER BY fecha_evento ";
+                    $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, nombreMateria, nombreProfesor ";
+                    $sql .= "FROM cursos ";
+                    $sql .= "INNER JOIN materias ";
+                    $sql .= "ON cursos.materiaCurso=materias.idMaterias ";
+                    $sql .= "INNER JOIN profesores ";
+                    $sql .= "ON cursos.profesorCurso=profesores.idProfesor ";
+                    $sql .= "ORDER BY añoCurso ";
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
                     $error = $e->getMessage();
@@ -25,25 +25,39 @@
                <div class="calendario">
 
 
-               <?php while($eventos = $resultado->fetch_all(MYSQLI_ASSOC) ) { ?>
+               <?php while($cursos = $resultado->fetch_all(MYSQLI_ASSOC) ) { ?>
 
                      <?php $dias = array(); ?>
-                     <?php foreach($eventos as $evento) {
-                        $dias[] = $evento['fecha_evento'];
-                     } ?>
+                     <?php foreach($cursos as $curso) {
+                        $dias[] = $curso['añoCurso'];
+                      } ?>
 
 
                      <?php $dias = array_values(array_unique($dias)) ?>
                      
                      <?php $contador = 0; ?>
-                     <?php foreach($eventos as $evento): ?>
+                     <?php foreach($cursos as $curso): ?>
                             <?php if($contador < count($dias)): ?>
-                              <?php $dia_actual = $evento['fecha_evento']; ?>
-                              <?php if($dia_actual == $dias[$contador]): ?>
+                              <?php $curso_nivel = $curso['añoCurso']; ?>
+                              <?php if($curso_nivel == $dias[$contador]): ?>
                                     <h3>
                                           <i class="fa fa-calendar" aria-hidden="true"></i>
-                                          <?php echo $evento['fecha_evento']; ?>
-                                          
+                                          <!--  <?php echo $curso['añoCurso']; ?>-->
+                                          <?php switch ($curso['añoCurso']) {
+                                        case 1:
+                                          echo 'Primer Año';
+                                          break;
+                                        case 2:
+                                          echo 'Segundo Año';
+                                          break;
+                                        case 3:
+                                          echo 'Tercer Año';
+                                          break;
+                                        default:
+                                            echo "";
+                                            break;
+                                          }
+                                       ?> 
 
                                     </h3>
                                     
@@ -53,30 +67,14 @@
                             <?php endif; ?>
 
                            <div class="dia">
-                                 <p class="titulo"><?php echo $evento['nombre_evento']; ?></p>
-                                 <p class="hora"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $evento['fecha_evento'] . " " . $evento['hora_evento'] . " hrs"; ?>
+                                 <p class="titulo"><?php echo $curso['diaCurso']; ?></p>
+                                 <p class="hora"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $curso['nombreMateria'] . " " . $curso['horaCurso'] . " hrs"; ?>
                                 <p>
-                                      <?php $categoria_evento = $evento['cat_evento']; ?>
+                                      <?php $categoria_evento = $curso['horaCurso']; ?>
 
-                                      <?php
-                                      switch ($categoria_evento) {
-                                        case 'Talleres':
-                                          echo '<i class="fa fa-code" aria-hidden="true"></i> Taller';
-                                          break;
-                                        case 'Conferencia':
-                                          echo '<i class="fa fa-comment" aria-hidden="true"></i> Conferencias';
-                                          break;
-                                        case 'Seminario':
-                                          echo '<i class="fa fa-university" aria-hidden="true"></i> Seminarios';
-                                          break;
-                                        default:
-                                            echo "";
-                                            break;
-                                          }
-                                       ?>
-                                 </p>
+                                </p>
                                 <p><i class="fa fa-user" aria-hidden="true"></i>
-                                      <?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado']; ?>
+                                      <?php echo $curso['nombreProfesor'] . " " . $curso['añoCurso']; ?>
                                 </p>
 
                            </div>
