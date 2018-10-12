@@ -9,7 +9,7 @@
               <?php
                   try {
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, nombreMateria, nombreProfesor ";
+                    $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, ordenDia,nombreMateria, nombreProfesor ";
                     $sql .= "FROM cursos ";
                     $sql .= "INNER JOIN materias ";
                     $sql .= "ON cursos.materiaCurso=materias.idMaterias ";
@@ -67,7 +67,7 @@
                             <?php endif; ?>
 
                            <div class="dia">
-                                 <p class="titulo"><?php echo $curso['diaCurso']; ?></p>
+                                 <p class="titulo"><?php echo $curso['diaCurso'] . " " . $curso['ordenDia']; ?></p>
                                  <p class="hora"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $curso['nombreMateria'] . " " . $curso['horaCurso'] . " hrs"; ?>
                                 <p>
                                       <?php $categoria_evento = $curso['horaCurso']; ?>

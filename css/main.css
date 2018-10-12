@@ -969,7 +969,8 @@ div.dia {
     width: 20%;
     min-height: 240px;
     padding-top: 20px;
-  }
+    
+  
 }
 div.dia:hover {
   background-color: #e1e1e1;

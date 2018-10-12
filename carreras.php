@@ -4,27 +4,40 @@
                 <?php
                   try {
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, nombre_invitado, apellido_invitado ";
-                    $sql .= "FROM eventos ";
-                    $sql .= "INNER JOIN categoria_evento ";
-                    $sql .= "ON eventos.id_cat_evento=categoria_evento.id_categoria ";
-                    $sql .= "INNER JOIN invitados ";
-                    $sql .= "ON eventos.id_inv=invitados.invitado_id ";
-                    $sql .= "ORDER BY fecha_evento ";
+                    $sql = "SELECT * FROM carreras";
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
                     $error = $e->getMessage();
                   }
                ?>
-
-
+               
         <section class="seccion contenedor">         
           
-            <h2>Tecnicatura Superior En Analisis de Sistemas</h2>
-            <p>
-              Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.
-            </p>
-            <button class="button">PROGRAMA</button>
+             <?php while($carreras = $resultado->fetch_all(MYSQLI_ASSOC) ) { ?>
+
+                     <?php $nombre = array(); ?>
+                     <?php foreach($carreras as $carrera) {
+                        $nombre[] = $carrera['nombreCarrera'];
+                      } ?>
+
+
+                     <?php $nombre = array_values(array_unique($nombre)) ?>
+                     
+                     <?php foreach($carreras as $carrera): ?>
+                      <h2><?php echo $carrera['nombreCarrera']; ?></h2>
+                      <p><?php echo $carrera['descripCarrera']; ?></p>
+                    <button class="button">PROGRAMA</button>
+
+
+                     <?php endforeach; ?>
+                 </div> <!--.calendario-->
+                 <?php } ?> 
+
+            <?php
+               $conn->close();
+            ?>
+
+            
            
         </section> <!--seccion-->
 
