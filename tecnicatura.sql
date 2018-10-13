@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2018 a las 20:57:49
+-- Tiempo de generación: 13-10-2018 a las 19:40:47
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.0.30
 
@@ -43,11 +43,6 @@ CREATE TABLE `alumnos` (
   `passAlumno` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `alumnos`
---
-
-TRUNCATE TABLE `alumnos`;
 -- --------------------------------------------------------
 
 --
@@ -58,20 +53,16 @@ DROP TABLE IF EXISTS `carreras`;
 CREATE TABLE `carreras` (
   `idCarreras` int(11) NOT NULL,
   `nombreCarrera` varchar(50) DEFAULT NULL,
+  `descripCarrera` longtext NOT NULL,
   `programaCarrera` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncar tablas antes de insertar `carreras`
---
-
-TRUNCATE TABLE `carreras`;
---
 -- Volcado de datos para la tabla `carreras`
 --
 
-INSERT INTO `carreras` (`idCarreras`, `nombreCarrera`, `programaCarrera`) VALUES
-(0, 'Tecnicatura superior en analisis de sistemas', NULL);
+INSERT INTO `carreras` (`idCarreras`, `nombreCarrera`, `descripCarrera`, `programaCarrera`) VALUES
+(0, 'Tecnicatura superior en analisis de sistemas', 'Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.', NULL);
 
 -- --------------------------------------------------------
 
@@ -85,27 +76,23 @@ CREATE TABLE `cursos` (
   `materiaCurso` int(11) DEFAULT NULL,
   `profesorCurso` int(11) DEFAULT NULL,
   `diaCurso` varchar(45) DEFAULT NULL,
+  `ordenDia` int(11) NOT NULL,
   `horaCurso` varchar(45) DEFAULT NULL,
   `añoCurso` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncar tablas antes de insertar `cursos`
---
-
-TRUNCATE TABLE `cursos`;
---
 -- Volcado de datos para la tabla `cursos`
 --
 
-INSERT INTO `cursos` (`idCurso`, `materiaCurso`, `profesorCurso`, `diaCurso`, `horaCurso`, `añoCurso`) VALUES
-(0, 0, 0, 'Lunes', '1', 1),
-(1, 1, 1, 'Martes', '1', 3),
-(2, 1, 1, 'Jueves', '1', 2),
-(3, 0, 0, 'Miercoles', '1', 1),
-(4, 1, 1, 'Jueves', '1', 1),
-(5, 0, 0, 'Martes', '1', 1),
-(6, 1, 1, 'Viernes', '1', 1);
+INSERT INTO `cursos` (`idCurso`, `materiaCurso`, `profesorCurso`, `diaCurso`, `ordenDia`, `horaCurso`, `añoCurso`) VALUES
+(0, 0, 0, 'Lunes', 1, '1', 1),
+(1, 1, 1, 'Martes', 2, '1', 3),
+(2, 1, 1, 'Jueves', 4, '1', 2),
+(3, 0, 0, 'Miercoles', 3, '1', 1),
+(4, 1, 1, 'Jueves', 4, '1', 1),
+(5, 0, 0, 'Martes', 2, '1', 1),
+(6, 1, 1, 'Viernes', 5, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -124,11 +111,6 @@ CREATE TABLE `datosinstituto` (
   `telefonoInstituto` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `datosinstituto`
---
-
-TRUNCATE TABLE `datosinstituto`;
 -- --------------------------------------------------------
 
 --
@@ -143,11 +125,6 @@ CREATE TABLE `materias` (
   `carrera` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `materias`
---
-
-TRUNCATE TABLE `materias`;
 --
 -- Volcado de datos para la tabla `materias`
 --
@@ -170,11 +147,6 @@ CREATE TABLE `novedades` (
   `isActive` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `novedades`
---
-
-TRUNCATE TABLE `novedades`;
 -- --------------------------------------------------------
 
 --
@@ -188,11 +160,6 @@ CREATE TABLE `profesores` (
   `dniProfesor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `profesores`
---
-
-TRUNCATE TABLE `profesores`;
 --
 -- Volcado de datos para la tabla `profesores`
 --
@@ -217,11 +184,6 @@ CREATE TABLE `usuarios` (
   `actualizado` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Truncar tablas antes de insertar `usuarios`
---
-
-TRUNCATE TABLE `usuarios`;
 --
 -- Índices para tablas volcadas
 --
