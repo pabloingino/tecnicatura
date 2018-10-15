@@ -9,7 +9,7 @@
               <?php
                   try {
                     require_once('includes/funciones/bd_conexion.php');
-                    $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, ordenDia,nombreMateria, nombreProfesor ";
+                    $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, ordenDia, cuatrimestre, nombreMateria, nombreProfesor ";
                     $sql .= "FROM cursos ";
                     $sql .= "INNER JOIN materias ";
                     $sql .= "ON cursos.materiaCurso=materias.idMaterias ";
@@ -34,8 +34,9 @@
 
 
                      <?php $dias = array_values(array_unique($dias)) ?>
-                     
+
                      <?php $contador = 0; ?>
+
                      <?php foreach($cursos as $curso): ?>
                             <?php if($contador < count($dias)): ?>
                               <?php $curso_nivel = $curso['añoCurso']; ?>
@@ -57,20 +58,21 @@
                                             echo "";
                                             break;
                                           }
-                                       ?> 
+                                       ?>
 
                                     </h3>
-                                    
+
                                    <?php $contador++; ?>
                               <?php endif; ?>
-                              
+
                             <?php endif; ?>
+
 
                            <div class="dia">
                                  <p class="titulo"><?php echo $curso['diaCurso'] . " " . $curso['ordenDia']; ?></p>
                                  <p class="hora"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $curso['nombreMateria'] . " " . $curso['horaCurso'] . " hrs"; ?>
                                 <p>
-                                      <?php $categoria_evento = $curso['horaCurso']; ?>
+
 
                                 </p>
                                 <p><i class="fa fa-user" aria-hidden="true"></i>
@@ -78,10 +80,10 @@
                                 </p>
 
                            </div>
-                            
+
                      <?php endforeach; ?>
                  </div> <!--.calendario-->
-                 <?php } ?> 
+                 <?php } ?>
 
             <?php
                $conn->close();

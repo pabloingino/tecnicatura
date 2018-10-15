@@ -37,7 +37,7 @@
                 <tbody>
                         <?php
                             try {
-                                $sql = "SELECT id_admin, usuario, nombre FROM admins";
+                                $sql = "SELECT idUsuario, nickUsuario, nombreUsuario FROM usuarios";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
@@ -54,7 +54,7 @@
                                         <a href="#" data-id="<?php echo $admin['id_admin']; ?>" data-tipo="admin" class="btn bg-maroon bnt-flat margin borrar_registro">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        
+
                                     </td>
                                 </tr>
                             <?php }  ?>
@@ -83,4 +83,3 @@
   <?php
           include_once 'templates/footer.php';
   ?>
-

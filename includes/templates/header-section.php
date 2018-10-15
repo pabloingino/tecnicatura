@@ -60,23 +60,11 @@
 
 
 
-            <div class="hero">
-                <div class="contenido-header">
-                    <!-- <nav class="redes-sociales">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </nav> -->
-                    <!-- <div class="informacion-evento">
-                        <div class="clearfix">
-                            <p class="fecha"><i class="fa fa-calendar" aria-hidden="true"></i> 10-12 Dic</p>
-                            <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Buenos Aires, AR</p>
-                        </div><!--.informacion-evento-->
+            <div class="hero-section">
 
-                        <h1 class="nombre-sitio">ifts n°4</h1>
-                        <p class="slogan"><span>Instituto de Formacion Tecnica Superior</span></p>
+
+                        <!-- <h1 class="nombre-sitio">ifts n°4</h1> -->
+
                     </div>
 
                 </div>

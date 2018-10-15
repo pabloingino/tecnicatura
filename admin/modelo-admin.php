@@ -16,7 +16,7 @@ if($_POST['registro'] == 'nuevo'){
     $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
 
     try {
-        $stmt = $conn->prepare("INSERT INTO admins (usuario, nombre, hash_pass, nivel, actualizado) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO usuarios (nickUsuario, nombreUsuario, hashPass, nivel, actualizado) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $usuario, $nombre, $password_hashed, $superadmin, $fecha);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
@@ -44,7 +44,7 @@ if($_POST['registro'] == 'actualizar'){
 
     try {
         if(empty($_POST['password']) ) {
-            $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, nivel = ?,actualizado = NOW() WHERE id_admin = ? ");
+            $stmt = $conn->prepare("UPDATE usuarios SET nickUsuario = ?, nombreUsuario = ?, nivel = ?,actualizado = NOW() WHERE idUsuario = ? ");
             $stmt->bind_param("sssi", $usuario, $nombre, $superadmin, $id_registro);
         } else {
             $opciones = array(
@@ -52,7 +52,7 @@ if($_POST['registro'] == 'actualizar'){
             );
 
             $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
-            $stmt = $conn->prepare('UPDATE admins SET usuario = ?, nombre = ?, hash_pass = ?, nivel = ?,actualizado = NOW() WHERE id_admin = ? ');
+            $stmt = $conn->prepare('UPDATE admins SET nickUsuario = ?, nombreUsuario = ?, hash_pass = ?, nivel = ?,actualizado = NOW() WHERE idUsuario = ? ');
             $stmt->bind_param("ssssi", $usuario, $nombre, $hash_password, $superadmin,$id_registro);
         }
 
@@ -85,7 +85,7 @@ if($_POST['registro'] == 'eliminar'){
     $id_borrar = $_POST['id'];
 
     try {
-        $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ? ');
+        $stmt = $conn->prepare('DELETE FROM usuarios WHERE idUsuario = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if($stmt->affected_rows) {
