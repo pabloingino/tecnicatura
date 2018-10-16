@@ -13,6 +13,7 @@
     } catch (Exception $e) {
       $error = $e->getMessage();
     }?>
+      <!-- VARIABLES PARA VALIDAR LA CANTIDAD DE CLASES POR DIA -->
       <?php
         $lu = 0;
         $ma = 0;
@@ -26,6 +27,7 @@
           <?php $dias = array(); ?>
           <?php foreach($cursos as $curso) {
              $dias[] = $curso['añoCurso'];
+             //----- ACA VALIDO LA CANIDAD DE CLASES POR DIA -----
              if ($curso['ordenDia'] == 1) {
                $lu++;
              }

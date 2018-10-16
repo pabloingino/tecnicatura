@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2018 a las 19:40:47
+-- Tiempo de generación: 16-10-2018 a las 21:45:26
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.0.30
 
@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tecnicatura`
 --
-/*CREATE DATABASE IF NOT EXISTS `tecnicatura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `tecnicatura`;*/
+CREATE DATABASE IF NOT EXISTS `tecnicatura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `tecnicatura`;
 
 -- --------------------------------------------------------
 
@@ -52,17 +52,10 @@ CREATE TABLE `alumnos` (
 DROP TABLE IF EXISTS `carreras`;
 CREATE TABLE `carreras` (
   `idCarreras` int(11) NOT NULL,
-  `nombreCarrera` varchar(50) DEFAULT NULL,
+  `nombreCarrera` varchar(50) NOT NULL,
   `descripCarrera` longtext NOT NULL,
   `programaCarrera` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `carreras`
---
-
-INSERT INTO `carreras` (`idCarreras`, `nombreCarrera`, `descripCarrera`, `programaCarrera`) VALUES
-(0, 'Tecnicatura superior en analisis de sistemas', 'Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.', NULL);
 
 -- --------------------------------------------------------
 
@@ -75,24 +68,12 @@ CREATE TABLE `cursos` (
   `idCurso` int(11) NOT NULL,
   `materiaCurso` int(11) DEFAULT NULL,
   `profesorCurso` int(11) DEFAULT NULL,
-  `diaCurso` varchar(45) DEFAULT NULL,
+  `diaCurso` varchar(45) NOT NULL,
   `ordenDia` int(11) NOT NULL,
-  `horaCurso` varchar(45) DEFAULT NULL,
-  `añoCurso` int(3) NOT NULL
+  `horaCurso` varchar(45) NOT NULL,
+  `añoCurso` int(3) NOT NULL,
+  `cuatrimestre` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `cursos`
---
-
-INSERT INTO `cursos` (`idCurso`, `materiaCurso`, `profesorCurso`, `diaCurso`, `ordenDia`, `horaCurso`, `añoCurso`) VALUES
-(0, 0, 0, 'Lunes', 1, '1', 1),
-(1, 1, 1, 'Martes', 2, '1', 3),
-(2, 1, 1, 'Jueves', 4, '1', 2),
-(3, 0, 0, 'Miercoles', 3, '1', 1),
-(4, 1, 1, 'Jueves', 4, '1', 1),
-(5, 0, 0, 'Martes', 2, '1', 1),
-(6, 1, 1, 'Viernes', 5, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -120,18 +101,10 @@ CREATE TABLE `datosinstituto` (
 DROP TABLE IF EXISTS `materias`;
 CREATE TABLE `materias` (
   `idMaterias` int(11) NOT NULL,
-  `nombreMateria` varchar(50) DEFAULT NULL,
+  `nombreMateria` varchar(50) NOT NULL,
   `programaMateria` longtext,
-  `carrera` int(11) DEFAULT NULL
+  `carrera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `materias`
---
-
-INSERT INTO `materias` (`idMaterias`, `nombreMateria`, `programaMateria`, `carrera`) VALUES
-(0, 'Contabilidad', '/var/www/programa.pdf', 0),
-(1, 'Practica Profecional 2', '/var/www', 0);
 
 -- --------------------------------------------------------
 
@@ -142,6 +115,7 @@ INSERT INTO `materias` (`idMaterias`, `nombreMateria`, `programaMateria`, `carre
 DROP TABLE IF EXISTS `novedades`;
 CREATE TABLE `novedades` (
   `idNovedad` int(11) NOT NULL,
+  `tituloNovedad` text NOT NULL,
   `textNovedad` longtext,
   `fechaNovedad` date DEFAULT NULL,
   `isActive` int(2) DEFAULT NULL
@@ -156,17 +130,9 @@ CREATE TABLE `novedades` (
 DROP TABLE IF EXISTS `profesores`;
 CREATE TABLE `profesores` (
   `idProfesor` int(11) NOT NULL,
-  `nombreProfesor` varchar(50) DEFAULT NULL,
+  `nombreProfesor` varchar(50) NOT NULL,
   `dniProfesor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `profesores`
---
-
-INSERT INTO `profesores` (`idProfesor`, `nombreProfesor`, `dniProfesor`) VALUES
-(0, 'Lino Osorio', 30654538),
-(1, 'Sebastian Cohen', 33256692);
 
 -- --------------------------------------------------------
 
@@ -177,12 +143,20 @@ INSERT INTO `profesores` (`idProfesor`, `nombreProfesor`, `dniProfesor`) VALUES
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `idUsuario` int(11) NOT NULL,
-  `nickUsuario` varchar(50) DEFAULT NULL,
+  `nickUsuario` varchar(50) NOT NULL,
   `nombreUsuario` varchar(50) DEFAULT NULL,
-  `hashPass` varchar(60) DEFAULT NULL,
-  `nivel` int(2) DEFAULT NULL,
+  `hashPass` varchar(60) NOT NULL,
+  `nivel` int(2) NOT NULL,
   `actualizado` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idUsuario`, `nickUsuario`, `nombreUsuario`, `hashPass`, `nivel`, `actualizado`) VALUES
+(11, 'admin', 'Super Adminsitrador', '$2a$12$5.VTKXMVwlFGxxYiSOCBC.UYYE/QgcTfp.e0q.9YuoFDF.qrqpy7O', 1, '2018-10-16'),
+(12, 'pabloi', 'Pablo', '$2y$12$mi43OvQHNbe60.3IrtU2ruyr0PHmKjg/Ta7Q9qFPwqtmZnT69E1Jq', 0, '2018-10-16');
 
 --
 -- Índices para tablas volcadas
@@ -192,19 +166,23 @@ CREATE TABLE `usuarios` (
 -- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  ADD PRIMARY KEY (`idAlumno`);
+  ADD PRIMARY KEY (`idAlumno`),
+  ADD UNIQUE KEY `idAlumno` (`idAlumno`);
 
 --
 -- Indices de la tabla `carreras`
 --
 ALTER TABLE `carreras`
-  ADD PRIMARY KEY (`idCarreras`);
+  ADD PRIMARY KEY (`idCarreras`),
+  ADD UNIQUE KEY `idCarreras` (`idCarreras`),
+  ADD UNIQUE KEY `nombreCarrera` (`nombreCarrera`);
 
 --
 -- Indices de la tabla `cursos`
 --
 ALTER TABLE `cursos`
   ADD PRIMARY KEY (`idCurso`),
+  ADD UNIQUE KEY `idCurso` (`idCurso`),
   ADD KEY `idMateria` (`materiaCurso`),
   ADD KEY `idProfesor` (`profesorCurso`);
 
@@ -212,32 +190,90 @@ ALTER TABLE `cursos`
 -- Indices de la tabla `datosinstituto`
 --
 ALTER TABLE `datosinstituto`
-  ADD PRIMARY KEY (`idDatos`);
+  ADD PRIMARY KEY (`idDatos`),
+  ADD UNIQUE KEY `idDatos` (`idDatos`);
 
 --
 -- Indices de la tabla `materias`
 --
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`idMaterias`),
+  ADD UNIQUE KEY `idMaterias` (`idMaterias`),
   ADD KEY `fk_id_carrera` (`carrera`);
 
 --
 -- Indices de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  ADD PRIMARY KEY (`idNovedad`);
+  ADD PRIMARY KEY (`idNovedad`),
+  ADD UNIQUE KEY `idNovedad` (`idNovedad`);
 
 --
 -- Indices de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  ADD PRIMARY KEY (`idProfesor`);
+  ADD PRIMARY KEY (`idProfesor`),
+  ADD UNIQUE KEY `idProfesor` (`idProfesor`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idUsuario`);
+  ADD PRIMARY KEY (`idUsuario`),
+  ADD UNIQUE KEY `idUsuario` (`idUsuario`),
+  ADD UNIQUE KEY `nickUsuario` (`nickUsuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `carreras`
+--
+ALTER TABLE `carreras`
+  MODIFY `idCarreras` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cursos`
+--
+ALTER TABLE `cursos`
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `datosinstituto`
+--
+ALTER TABLE `datosinstituto`
+  MODIFY `idDatos` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `novedades`
+--
+ALTER TABLE `novedades`
+  MODIFY `idNovedad` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `profesores`
+--
+ALTER TABLE `profesores`
+  MODIFY `idProfesor` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas

@@ -34,7 +34,7 @@
                                      <?php if($curso_nivel == $dias[$contador]): ?>
                                            <h3>
                                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                 <?php echo "SEGUNDO AÑO PRIMER CUATRIMESTRE"; ?>
+                                                <?php echo $anio . '° año ' . $cuatri .'° cuatrimestre'; ?>
                                            </h3>
 
                                           <?php $contador++; ?>
@@ -97,8 +97,8 @@
                                          <?php $curso_nivel = $curso['añoCurso']; ?>
                                          <?php if($curso_nivel == $dias[$contador]): ?>
                                                <h3>
-                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                     <?php echo "SEGUNDO AÑO SEGUNDO CUATRIMESTRE"; ?>
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                    <?php echo $anio . '° año ' . $cuatri .'° cuatrimestre'; ?>
                                                </h3>
 
                                               <?php $contador++; ?>

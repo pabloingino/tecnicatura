@@ -34,7 +34,7 @@
         <div class="row">
                 <div class="col-lg-3 col-xs-6">
                     <?php
-                        $sql = "SELECT COUNT(idCurso) AS cursos FROM cursos ";
+                        $sql = "SELECT COUNT(ID_Registrado) AS registros FROM registrados ";
                         $resultado = $conn->query($sql);
                         $registrados = $resultado->fetch_assoc();
 
@@ -42,7 +42,7 @@
                      <!-- small box -->
                       <div class="small-box bg-aqua">
                         <div class="inner">
-                          <h3><?php echo $registrados['cursos']; ?></h3>
+                          <h3><?php echo $registrados['registros']; ?></h3>
 
                           <p>Total Registrados</p>
                         </div>
@@ -57,7 +57,7 @@
 
                 <div class="col-lg-3 col-xs-6">
                     <?php
-                        $sql = "SELECT COUNT(idCurso) AS primero FROM cursos WHERE añoCurso = 1 ";
+                        $sql = "SELECT COUNT(ID_Registrado) AS registros FROM registrados WHERE pagado = 1 ";
                         $resultado = $conn->query($sql);
                         $registrados = $resultado->fetch_assoc();
 
@@ -65,7 +65,7 @@
                      <!-- small box -->
                       <div class="small-box bg-yellow">
                         <div class="inner">
-                          <h3><?php echo $registrados['primero']; ?></h3>
+                          <h3><?php echo $registrados['registros']; ?></h3>
 
                           <p>Total Pagados</p>
                         </div>
@@ -80,7 +80,7 @@
 
                 <div class="col-lg-3 col-xs-6">
                     <?php
-                        $sql = "SELECT COUNT(idCurso) AS segundo FROM cursos WHERE añoCurso = 2 ";
+                        $sql = "SELECT COUNT(ID_Registrado) AS registros FROM registrados WHERE pagado = 0 ";
                         $resultado = $conn->query($sql);
                         $registrados = $resultado->fetch_assoc();
 
@@ -88,7 +88,7 @@
                      <!-- small box -->
                       <div class="small-box bg-red">
                         <div class="inner">
-                          <h3><?php echo $registrados['segundo']; ?></h3>
+                          <h3><?php echo $registrados['registros']; ?></h3>
 
                           <p>Total Sin Pagar</p>
                         </div>
@@ -103,10 +103,10 @@
 
                 <div class="col-lg-3 col-xs-6">
                     <?php
-                        $sql = "SELECT COUNT(idCurso) AS tercero FROM cursos WHERE añoCurso =  3";
+                        $sql = "SELECT SUM(total_pagado) AS ganancias FROM registrados WHERE pagado = 1 ";
                         $resultado = $conn->query($sql);
                         $registrados = $resultado->fetch_assoc();
-                        $ganancia = $registrados['tercero'];
+                        $ganancia = $registrados['ganancias'];
 
                     ?>
                      <!-- small box -->
@@ -126,8 +126,81 @@
                 </div>
         </div>
 
-</section>
-       
+
+        <h2 class="page-header">Regalos</h2>
+
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <?php
+                    $sql = "SELECT COUNT(ID_Registrado) AS pulseras FROM registrados WHERE pagado = 1 AND regalo = 1";
+                    $resultado = $conn->query($sql);
+                    $regalo = $resultado->fetch_assoc();
+
+                ?>
+                 <!-- small box -->
+                  <div class="small-box bg-teal">
+                    <div class="inner">
+                      <h3><?php echo $regalo['pulseras']; ?></h3>
+
+                      <p>Pulseras</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-gift"></i>
+                    </div>
+                    <a href="lista-registrados.php" class="small-box-footer">
+                      Más Información <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <?php
+                    $sql = "SELECT COUNT(ID_Registrado) AS etiquetas FROM registrados WHERE pagado = 1 AND regalo = 2";
+                    $resultado = $conn->query($sql);
+                    $regalo = $resultado->fetch_assoc();
+
+                ?>
+                 <!-- small box -->
+                  <div class="small-box bg-maroon">
+                    <div class="inner">
+                      <h3><?php echo $regalo['etiquetas']; ?></h3>
+
+                      <p>Etiquetas</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-gift"></i>
+                    </div>
+                    <a href="lista-registrados.php" class="small-box-footer">
+                      Más Información <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <?php
+                    $sql = "SELECT COUNT(ID_Registrado) AS plumas FROM registrados WHERE pagado = 1 AND regalo = 3";
+                    $resultado = $conn->query($sql);
+                    $regalo = $resultado->fetch_assoc();
+
+                ?>
+                 <!-- small box -->
+                  <div class="small-box bg-purple-active">
+                    <div class="inner">
+                      <h3><?php echo $regalo['plumas']; ?></h3>
+
+                      <p>Plumas</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa fa-gift"></i>
+                    </div>
+                    <a href="lista-registrados.php" class="small-box-footer">
+                      Más Información <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                  </div>
+            </div>
+        </div>
+
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

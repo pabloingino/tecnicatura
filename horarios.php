@@ -20,6 +20,7 @@
 
                 </form>
                 <?php
+                  $anio = 0;          
                   if (isset($_POST['submit'])) {
                     $anio = $_POST['anio'];
                     $cuatri = $_POST['cuatrimestre'];

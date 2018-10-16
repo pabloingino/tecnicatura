@@ -37,7 +37,7 @@
                     </div>
                     <div class="box-body">
                         <?php
-                            $sql = "SELECT * FROM `admins` WHERE `id_admin` = $id ";
+                            $sql = "SELECT * FROM `usuarios` WHERE `idUsuario` = $id ";
                             $resultado = $conn->query($sql);
                             $admin = $resultado->fetch_assoc();
                         ?>
@@ -46,11 +46,11 @@
                               <div class="box-body">
                                     <div class="form-group">
                                           <label for="usuario">Usuario:</label>
-                                          <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?php echo $admin['usuario']; ?>">
+                                          <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?php echo $admin['nickUsuario']; ?>">
                                     </div>
                                     <div class="form-group">
                                           <label for="nombre">Nombre:</label>
-                                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre Completo" value="<?php echo $admin['nombre']; ?>">
+                                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre Completo" value="<?php echo $admin['nombreUsuario']; ?>">
                                     </div>
                                     <div class="form-group">
                                           <label for="password">Password: </label>
@@ -85,6 +85,7 @@
                               <div class="box-footer">
                                   <input type="hidden" name="registro" value="actualizar">
                                   <input type="hidden" name="id_registro" value="<?php echo $id; ?>">
+
                                   <button type="submit" class="btn btn-primary">Guardar</button>
                               </div>
                         </form>

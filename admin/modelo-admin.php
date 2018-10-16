@@ -2,12 +2,11 @@
 
 
 include_once 'funciones/funciones.php';
-$usuario = $_POST['usuario'];
-$nombre  = $_POST['nombre'];
-$password = $_POST['password'];
-$superadmin = $_POST['superadmin'];
-$id_registro = $_POST['id_registro'];
-$fecha = date('Y-m-d H:i:s');
+    $usuario = $_POST['usuario'];
+    $nombre  = $_POST['nombre'];
+    $password = $_POST['password'];
+    $superadmin = $_POST['superadmin'];
+    $fecha = date('Y-m-d H:i:s');
 
 if($_POST['registro'] == 'nuevo'){
     $opciones = array(
@@ -41,19 +40,19 @@ if($_POST['registro'] == 'nuevo'){
 }
 
 if($_POST['registro'] == 'actualizar'){
-
+   $id_registro = $_POST['id_registro'];
     try {
         if(empty($_POST['password']) ) {
-            $stmt = $conn->prepare("UPDATE usuarios SET nickUsuario = ?, nombreUsuario = ?, nivel = ?,actualizado = NOW() WHERE idUsuario = ? ");
-            $stmt->bind_param("sssi", $usuario, $nombre, $superadmin, $id_registro);
+            $stmt = $conn->prepare("UPDATE usuarios SET nickUsuario = ?, nombreUsuario = ?, nivel = ?,actualizado = ? WHERE idUsuario = ? ");
+            $stmt->bind_param("sssss", $usuario, $nombre, $superadmin, $fecha ,$id_registro );
         } else {
             $opciones = array(
                 'cost' => 12
             );
 
             $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
-            $stmt = $conn->prepare('UPDATE admins SET nickUsuario = ?, nombreUsuario = ?, hash_pass = ?, nivel = ?,actualizado = NOW() WHERE idUsuario = ? ');
-            $stmt->bind_param("ssssi", $usuario, $nombre, $hash_password, $superadmin,$id_registro);
+            $stmt = $conn->prepare('UPDATE usuarios SET nickUsuario = ?, nombreUsuario = ?, hashPass = ?, nivel = ?,actualizado = ? WHERE idUsuario = ? ');
+            $stmt->bind_param("ssssss", $usuario, $nombre, $hash_password, $superadmin, $fecha , $id_registro);
         }
 
 
