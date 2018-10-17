@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group">
                                           <label for="apellido_profesor">Apellido:</label>
-                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Nombre" readonly="readonly">
+                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Nombre" >
                                     </div>
                                     <div class="form-group">
                                         <label for="dni_profesor">DNI: </label>

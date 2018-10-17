@@ -77,7 +77,19 @@
           <li><a href="crear-profesores.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
-
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          <span>Carreras</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="lista-carreras.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+          <li><a href="crear-carrera.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
+        </ul>
+      </li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-address-card" aria-hidden="true"></i>

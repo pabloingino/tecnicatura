@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
           <h1>
-            Listado de Invitados
+            Listado de Carreras
             <small></small>
           </h1>
     </section>
@@ -22,7 +22,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Administra la lista de invitados y su información aquí</h3>
+              <h3 class="box-title">Administra la lista de carreras y su información aquí</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -30,44 +30,44 @@
                 <thead>
                 <tr>
                   <th>Nombre</th>
-                  <th>Biografía</th>
-                  <th>Imagen</th>
+                  <th>descripcion</th>
+                  <th>Programa</th>
                   <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
                         <?php
                             try {
-                                $sql = "SELECT * FROM invitados";
+                                $sql = "SELECT * FROM carreras";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
                                 echo $error;
                             }
-                            while($invitado = $resultado->fetch_assoc() ) { ?>
-                                
+                            while($carrera = $resultado->fetch_assoc() ) { ?>
+
                                 <tr>
-                                    <td><?php echo $invitado['nombre_invitado'] . " " . $invitado['apellido_invitado'];  ?></td>
-                                    <td><?php echo $invitado['descripcion']; ?></td>
-                                    <td><img src="../img/invitados/<?php echo $invitado['url_imagen']; ?>" width="150"></td>
+                                    <td><?php echo $carrera['nombreCarrera'];  ?></td>
+                                    <td><?php echo $carrera['descripCarrera']; ?></td>
+                                    <td><?php echo $carrera['programaCarrera']; ?></td>
                                     <td>
-                                        <a href="editar-invitado.php?id=<?php echo $invitado['invitado_id'] ?>" class="btn bg-orange btn-flat margin">
+                                        <a href="editar-carrera.php?id=<?php echo $carrera['idCarreras'] ?>" class="btn bg-orange btn-flat margin">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="#" data-id="<?php echo $invitado['invitado_id'] ?>" data-tipo="invitado" class="btn bg-maroon bnt-flat margin borrar_registro">
+                                        <a href="#" data-id="<?php echo $carrera['idCarreras'] ?>" data-tipo="carrera" class="btn bg-maroon bnt-flat margin borrar_registro">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        
+
                                     </td>
                                 </tr>
                             <?php }  ?>
                 </tbody>
                 <tfoot>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Biografía</th>
-                    <th>Imagen</th>
-                    <th>Acciones</th>
+                  <th>Nombre</th>
+                  <th>descripcion</th>
+                  <th>Programa</th>
+                  <th>Acciones</th>
                 </tr>
                 </tfoot>
               </table>
@@ -87,4 +87,3 @@
   <?php
           include_once 'templates/footer.php';
   ?>
-

@@ -31,6 +31,7 @@
                 <tr>
                   <th>ID</th>
                   <th>Nombre</th>
+                  <th>Apellido</th>
                   <th>DNI</th>
                 </tr>
                 </thead>
@@ -48,6 +49,7 @@
                                 <tr>
                                     <td><?php echo $profesor['idProfesor'];?></td>
                                     <td><?php echo $profesor['nombreProfesor']; ?></td>
+                                    <td><?php echo $profesor['apellidoProfesor']; ?></td>
                                     <td><?php echo $profesor['dniProfesor']; ?></td>
                                     <td>
                                         <a href="editar-profesor.php?id=<?php echo $profesor['idProfesor'] ?>" class="btn bg-orange btn-flat margin">
@@ -65,6 +67,7 @@
                   <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>Apellido</th>
                     <th>DNI</th>
                     <th>Acciones</th>
                 </tr>

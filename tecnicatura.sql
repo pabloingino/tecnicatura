@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2018 a las 21:45:26
+-- Tiempo de generación: 17-10-2018 a las 20:27:26
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.0.30
 
@@ -54,8 +54,15 @@ CREATE TABLE `carreras` (
   `idCarreras` int(11) NOT NULL,
   `nombreCarrera` varchar(50) NOT NULL,
   `descripCarrera` longtext NOT NULL,
-  `programaCarrera` longtext
+  `programaCarrera` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `carreras`
+--
+
+INSERT INTO `carreras` (`idCarreras`, `nombreCarrera`, `descripCarrera`, `programaCarrera`) VALUES
+(1, 'Tecnicatura Superior En Analisis de Sistemas', 'La Tecnicatura Superior en Análisis de Sistemas se plantea como finalidad general una formación integral que promueva en los estudiantes la construcción de las herramientas intelectuales y prácticas necesarias para la operación, programación y el análisis de sistemas informáticos, fortalecer su identidad como analistas de sistemas y la elaboración de perspectivas éticas en el desarrollo de su tarea. Se propone la confluencia de saberes y habilidades técnicas con el conocimiento profundo y amplio que requiere el desempeño en este campo laboral.\r\nAlcances de la Titulación: El Técnico Superior en Análisis de Sistemas egresado de esta carrera podrá desempeñarse en empresas de informática y/o áreas de sistemas de organismos gubernamentales, empresas y organizaciones del tercer sector así como también en forma independiente.', 'instituto.pdf');
 
 -- --------------------------------------------------------
 
@@ -102,7 +109,7 @@ DROP TABLE IF EXISTS `materias`;
 CREATE TABLE `materias` (
   `idMaterias` int(11) NOT NULL,
   `nombreMateria` varchar(50) NOT NULL,
-  `programaMateria` longtext,
+  `programaMateria` varchar(50) DEFAULT NULL,
   `carrera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -131,8 +138,16 @@ DROP TABLE IF EXISTS `profesores`;
 CREATE TABLE `profesores` (
   `idProfesor` int(11) NOT NULL,
   `nombreProfesor` varchar(50) NOT NULL,
+  `apellidoProfesor` varchar(50) NOT NULL,
   `dniProfesor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `profesores`
+--
+
+INSERT INTO `profesores` (`idProfesor`, `nombreProfesor`, `apellidoProfesor`, `dniProfesor`) VALUES
+(1, 'Pablo', 'Ingino', 30654538);
 
 -- --------------------------------------------------------
 
@@ -237,7 +252,7 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `carreras`
 --
 ALTER TABLE `carreras`
-  MODIFY `idCarreras` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCarreras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `cursos`
@@ -255,7 +270,7 @@ ALTER TABLE `datosinstituto`
 -- AUTO_INCREMENT de la tabla `materias`
 --
 ALTER TABLE `materias`
-  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `novedades`
@@ -267,7 +282,7 @@ ALTER TABLE `novedades`
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  MODIFY `idProfesor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProfesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

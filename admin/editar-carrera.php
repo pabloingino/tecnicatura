@@ -21,8 +21,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Crear Invitados
-        <small>llena el formulario para añadir un invitado</small>
+        Editar Carrera
+        <small>Modifica el formulario para editar una carrera</small>
       </h1>
     </section>
 
@@ -34,36 +34,42 @@
                   <!-- Default box -->
                   <div class="box">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Crear Invitado</h3>
+                      <h3 class="box-title">Editar Carrera</h3>
                     </div>
                     <div class="box-body">
                         <?php
-                            $sql = "SELECT * FROM profesores WHERE idProfesor = $id ";
+                            $sql = "SELECT * FROM carreras WHERE idCarreras = $id ";
                             $resultado = $conn->query($sql);
-                            $profesor = $resultado->fetch_assoc();
+                            $carrera = $resultado->fetch_assoc();
                         ?>
                         <!-- form start -->
-                        <form role="form" name="guardar-registro" id="guardar-registro-archivo" method="post" action="modelo-profesor.php" enctype="multipart/form-data">
+                        <form role="form" name="guardar-registro" id="guardar-registro-archivo" method="post" action="modelo-carrera.php" enctype="multipart/form-data">
                               <div class="box-body">
                                     <div class="form-group">
-                                          <label for="nombre_invitado">Nombre:</label>
-                                          <input type="text" class="form-control" id="nombre_invitado" name="nombre_profesor" placeholder="Nombre" value="<?php echo $profesor['nombreProfesor']; ?>">
+                                          <label for="nombreCarrera">Nombre:</label>
+                                          <input type="text" class="form-control" id="nombreCarrera" name="nombreCarrera" placeholder="Nombre" value="<?php echo $carrera['nombreCarrera']; ?>">
                                     </div>
                                     <div class="form-group">
-                                          <label for="apellido_profesor">Apellido:</label>
-                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Apellido">
+                                        <label for="descripCarrera">Descripcion: </label>
+                                        <textarea class="form-control" id="descripCarrera" name="descripCarrera" rows="8" placeholder="Descripcion"><?php echo $carrera['descripCarrera']; ?></textarea>
                                     </div>
                                     <div class="form-group">
-                                      <label for="dni_profesor">DNI: </label>
-                                      <input type="number" class="form-control" id="dni_profesor" name="dni_profesor" placeholder="DNI" value="<?php echo $profesor['dniProfesor']; ?>" >
-                                    </div>
+                                        <label for="imagen_actual">Programa Actual</label>
+                                        <br>
+                                        <input type="text" class="form-control" id="programaCarrera" name="programaCarrera" readonly="readonly" placeholder="Programa" value="<?php echo $carrera['programaCarrera']; ?>">
 
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="programaCarrera">Programa:</label>
+                                      <input type="file" id="programaCarrera" name="programaCarrera">
+                                      <p class="help-block">Añada el programa de la carrera aquí</p>
+                                    </div>
                               </div>
                               <!-- /.box-body -->
 
                               <div class="box-footer">
                                   <input type="hidden" name="registro" value="actualizar">
-                                  <input type="hidden" name="id_registro" value="<?php echo $profesor['idProfesor']; ?>">
+                                  <input type="hidden" name="id_registro" value="<?php echo $carrera['idCarreras']; ?>">
                                   <button type="submit" class="btn btn-primary" id="crear_registro">Añadir</button>
                               </div>
                         </form>

@@ -1,13 +1,16 @@
 <?php
 include_once 'funciones/funciones.php';
 
-$nombre = $_POST['nombre_profesor'];
+//$nombre = $_POST['nombre_profesor'];
 //$apellido = $_POST['apellido_profesor'];
-$dni = $_POST['dni_profesor'];
+//$dni = $_POST['dni_profesor'];
 
 //$id_registro = $_POST['id_registro'];
 
 if($_POST['registro'] == 'nuevo'){
+    $nombre = $_POST['nombre_profesor'];
+    $apellido = $_POST['apellido_profesor'];
+    $dni = $_POST['dni_profesor'];
     /*
     $respuesta = array(
         'post' => $_POST,
@@ -17,15 +20,14 @@ if($_POST['registro'] == 'nuevo'){
     */
 
     try {
-        $stmt = $conn->prepare('INSERT INTO profesores (nombreProfesor, dniProfesor) VALUES (?, ?) ');
-        $stmt->bind_param("ss", $nombre, $dni);
+        $stmt = $conn->prepare('INSERT INTO profesores (nombreProfesor, apellidoProfesor, dniProfesor) VALUES (?, ?, ?) ');
+        $stmt->bind_param("sss", $nombre, $apellido, $dni);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
         if($stmt->affected_rows) {
             $respuesta = array(
                 'respuesta' => 'exito',
                 'id_insertado' => $id_insertado,
-                'resultado_imagen' => $imagen_resultado
             );
         } else {
             $respuesta = array(
@@ -44,10 +46,13 @@ if($_POST['registro'] == 'nuevo'){
 }
 
 if($_POST['registro'] == 'actualizar'){
+  $nombre = $_POST['nombre_profesor'];
+  $apellido = $_POST['apellido_profesor'];
+  $dni = $_POST['dni_profesor'];
   $id_registro = $_POST['id_registro'];
   try {
-           $stmt = $conn->prepare('UPDATE profesores SET nombreProfesor = ?, dniProfesor = ? WHERE idProfesor = ? ');
-           $stmt->bind_param("sss", $nombre, $dni,  $id_registro);
+           $stmt = $conn->prepare('UPDATE profesores SET nombreProfesor = ?, apellidoProfesor = ?, dniProfesor = ? WHERE idProfesor = ? ');
+           $stmt->bind_param("ssss", $nombre,  $apellido, $dni,  $id_registro);
            $estado = $stmt->execute();
 
         if($estado == true) {
@@ -75,7 +80,11 @@ if($_POST['registro'] == 'actualizar'){
 
 if($_POST['registro'] == 'eliminar'){
 
+    
     $id_borrar = $_POST['id'];
+    $nombre = 0;
+    $apellido = 0;
+    $dni = 0;
 
     try {
         $stmt = $conn->prepare('DELETE FROM profesores WHERE  idProfesor = ? ');
