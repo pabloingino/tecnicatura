@@ -38,7 +38,7 @@
             <div class="contenedor clearfix">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="img/logo.png" alt="logo gdlwebcamp">
+                        <img src="img/logo.png" alt="logo ifts">
                     </a>
                 </div>
 

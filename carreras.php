@@ -1,6 +1,6 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
-       
+
                 <?php
                   try {
                     require_once('includes/funciones/bd_conexion.php');
@@ -10,9 +10,9 @@
                     $error = $e->getMessage();
                   }
                ?>
-               
-        <section class="seccion contenedor">         
-          
+
+        <section class="seccion contenedor">
+
              <?php while($carreras = $resultado->fetch_all(MYSQLI_ASSOC) ) { ?>
 
                      <?php $nombre = array(); ?>
@@ -22,23 +22,23 @@
 
 
                      <?php $nombre = array_values(array_unique($nombre)) ?>
-                     
+
                      <?php foreach($carreras as $carrera): ?>
                       <h2><?php echo $carrera['nombreCarrera']; ?></h2>
                       <p><?php echo $carrera['descripCarrera']; ?></p>
-                    <button class="button">PROGRAMA</button>
+                    <a href="/tecnicatura/img/programa_carrera/<?php echo $carrera['programaCarrera']; ?>" download="programa_<?php echo $carrera['programaCarrera']; ?>"><button class="button">PROGRAMA</button></a>
 
 
                      <?php endforeach; ?>
                  </div> <!--.calendario-->
-                 <?php } ?> 
+                 <?php } ?>
 
             <?php
                $conn->close();
             ?>
 
-            
-           
+
+
         </section> <!--seccion-->
 
 

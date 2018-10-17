@@ -1,9 +1,11 @@
 <?php
+    if (!empty($_GET)) {
         session_start();
         $cerrar_sesion = $_GET['cerrar_sesion'];
         if($cerrar_sesion) {
           session_destroy();
-        }
+      }
+    }
         include_once 'funciones/funciones.php';
         include_once 'templates/header.php';
 ?>
@@ -11,7 +13,7 @@
 
 <div class="login-box">
   <div class="login-logo">
-    <a href="../index.php"><b>TECH</b>Camp</a>
+    <a href="../index.php"><b>IFTS | </b>N°4</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
