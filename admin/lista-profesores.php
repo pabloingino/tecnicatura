@@ -48,12 +48,12 @@
                                 <tr>
                                     <td><?php echo $profesor['idProfesor'];?></td>
                                     <td><?php echo $profesor['nombreProfesor']; ?></td>
-                                    <td><<?php echo $profesor['dniProfesor']; ?></td>
+                                    <td><?php echo $profesor['dniProfesor']; ?></td>
                                     <td>
-                                        <a href="editar-invitado.php?id=<?php echo $profesor['idProfesor'] ?>" class="btn bg-orange btn-flat margin">
+                                        <a href="editar-profesor.php?id=<?php echo $profesor['idProfesor'] ?>" class="btn bg-orange btn-flat margin">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="#" data-id="<?php echo $profesor['idProfesor'] ?>" data-tipo="invitado" class="btn bg-maroon bnt-flat margin borrar_registro">
+                                        <a href="#" data-id="<?php echo $profesor['idProfesor'] ?>" data-tipo="profesor" class="btn bg-maroon bnt-flat margin borrar_registro">
                                             <i class="fa fa-trash"></i>
                                         </a>
 
@@ -62,10 +62,10 @@
                             <?php }  ?>
                 </tbody>
                 <tfoot>
-                <tr>
+                  <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
-                    <th>Biografía</th>
-                    <th>Imagen</th>
+                    <th>DNI</th>
                     <th>Acciones</th>
                 </tr>
                 </tfoot>

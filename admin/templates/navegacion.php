@@ -39,7 +39,7 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-calendar"></i>
-          <span>Eventos</span>
+          <span>Cursos</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -53,35 +53,35 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-book" aria-hidden="true"></i>
-          <span>Categoria Eventos</span>
+          <span>Materias</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="lista-categorias.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
-          <li><a href="crear-categoria.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
+          <li><a href="lista-materias.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+          <li><a href="crear-materia.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
 
       <li class="treeview">
         <a href="#">
           <i class="fa fa-user-circle" aria-hidden="true"></i>
-          <span>Invitados</span>
+          <span>Profesores</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="lista-invitados.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
-          <li><a href="crear-invitado.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
+          <li><a href="lista-profesores.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+          <li><a href="crear-profesores.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
 
       <li class="treeview">
         <a href="#">
           <i class="fa fa-address-card" aria-hidden="true"></i>
-          <span>Registrados</span>
+          <span>Noticias</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
