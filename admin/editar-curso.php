@@ -213,7 +213,13 @@
                                                     ?>
                                           </select>
                                     </div>
-                              </div>
+                                    <div class="box-footer">
+                                        <input type="hidden" name="registro" value="actualizar">
+                                        <input type="hidden" name="id_registro" value="<?php  echo $id; ?>">
+                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                    </div>
+                              </form>
+                        </div>
                               <!-- /.box-body -->
                   </div>
                   <!-- /.box -->

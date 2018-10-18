@@ -11,8 +11,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-          Listado de Eventos
-          <small>Aquí podrás editar o borrar los eventos</small>
+          Listado de Materias
+          <small>Aquí podrás editar o borrar las Materias</small>
         </h1>
     </section>
 
@@ -22,7 +22,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Maneja los eventos en esta sección</h3>
+              <h3 class="box-title">Maneja las materias en esta sección</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

@@ -81,12 +81,12 @@ if($_POST['registro'] == 'actualizar'){
 
             // con imagen
             $stmt = $conn->prepare('UPDATE materias SET nombreMateria = ?,  programaMateria = ?, carrera = ? WHERE idMaterias = ? ');
-            $stmt->bind_param("ssss", $nombreMateria, $imagen_url, $carrera, $id_registro);
+            $stmt->bind_param("ssss", $nombre, $imagen_url, $carrera, $id_registro);
 
         } else {
             // sin imagen
             $stmt = $conn->prepare('UPDATE materias SET nombreMateria = ?, carrera = ? WHERE idMaterias = ? ');
-            $stmt->bind_param("sss", $nombreMateria, $carrera,   $id_registro);
+            $stmt->bind_param("sss", $nombre, $carrera,   $id_registro);
         }
         $estado = $stmt->execute();
 

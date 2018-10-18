@@ -11,8 +11,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-          Listado de Eventos
-          <small>Aquí podrás editar o borrar los eventos</small>
+          Listado de Cursos
+          <small>Aquí podrás editar o borrar los cursos</small>
         </h1>
     </section>
 
@@ -22,7 +22,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Maneja los eventos en esta sección</h3>
+              <h3 class="box-title">Maneja los cursos en esta sección</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -58,9 +58,29 @@
                                     <td><?php echo $cursos['nombreMateria']; ?></td>
                                     <td><?php echo $cursos['diaCurso']; ?></td>
                                     <td><?php echo $cursos['horaCurso']; ?></td>
-                                    <td><?php echo $cursos['añoCurso']; ?></td>
+                                    <td><?php
+                                              if ($cursos['añoCurso'] == 1) {
+                                                  echo "Primero";
+                                              }
+                                              if ($cursos['añoCurso'] == 2) {
+                                                  echo "Segundo";
+                                              }
+                                              if ($cursos['añoCurso'] == 3) {
+                                                  echo "Tercero";
+                                              }
+                                          ?>
+                                    </td>
                                     <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
-                                    <td><?php echo $cursos['cuatrimestre']; ?></td>
+                                    <td>
+                                      <?php
+                                                if ($cursos['cuatrimestre'] == 1) {
+                                                    echo "Primero";
+                                                }
+                                                if ($cursos['cuatrimestre'] == 2) {
+                                                    echo "Segundo";
+                                                }
+                                        ?>
+                                    </td>
                                     <td>
                                         <a href="editar-curso.php?id=<?php echo $cursos['idCurso']; ?>" class="btn bg-orange btn-flat margin">
                                             <i class="fa fa-pencil"></i>

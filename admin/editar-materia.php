@@ -52,7 +52,7 @@
                                     <div class="form-group">
                                         <label for="imagen_actual">Programa Actual</label>
                                         <br>
-                                        <input type="text" class="form-control" id="nombre_materia" name="nombre_materia" placeholder="Nombre" readonly="readonly" value="<?php echo $materia['programaMateria']; ?>">
+                                        <input type="text" class="form-control" id="progama_actual" name="progama_actual" placeholder="progama_actual" readonly="readonly" value="<?php echo $materia['programaMateria']; ?>">
                                     </div>
                                     <div class="form-group">
                                       <label for="archivo_programa">Programa:</label>
@@ -69,7 +69,7 @@
                                                         $sql = "SELECT * FROM carreras ";
                                                         $resultado = $conn->query($sql);
                                                         while($carMat = $resultado->fetch_assoc()) {
-                                                            if($carMat['idCarreras'] == $categoria_actual) { ?>
+                                                            if($carMat['idCarreras'] == $carrera_actual) { ?>
                                                                 <option value="<?php echo $carMat['idCarreras']; ?>" selected>
                                                                     <?php echo $carMat['nombreCarrera']; ?>
                                                                 </option>

@@ -64,8 +64,8 @@ if($_POST['registro'] == 'actualizar'){
     $id_registro = $_POST['id_registro'];
 
     try {
-        $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ?, editado = NOW() WHERE evento_id = ? ');
-        $stmt->bind_param('sssiii', $titulo, $fecha_formateada, $hora_formateada, $categoria_id, $invitado_id, $id_registro );
+        $stmt = $conn->prepare('UPDATE cursos SET materiaCurso = ?, profesorCurso = ?, ordenDia = ?, diaCurso = ?, horaCurso = ?, añoCurso = ?, cuatrimestre = ? WHERE idCurso = ? ');
+        $stmt->bind_param('iiisiiii', $materia, $profesor, $dia, $diaCurso, $hora, $anio, $cuatrimestre, $id_registro );
         $stmt->execute();
         if($stmt->affected_rows) {
             $respuesta = array(

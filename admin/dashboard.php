@@ -17,7 +17,7 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Información sobre el evento</small>
+        <small>Información sobre el instituto</small>
       </h1>
     </section>
 
@@ -44,12 +44,12 @@
                         <div class="inner">
                           <h3><?php echo $registrados['cursos']; ?></h3>
 
-                          <p>Total Registrados</p>
+                          <p>Total Materias</p>
                         </div>
                         <div class="icon">
-                          <i class="fa fa-user"></i>
+                          <i class="fa fa-university"></i>
                         </div>
-                        <a href="lista-registrados.php" class="small-box-footer">
+                        <a href="lista-cursos.php" class="small-box-footer">
                           Más Información <i class="fa fa-arrow-circle-right"></i>
                         </a>
                       </div>
@@ -67,12 +67,12 @@
                         <div class="inner">
                           <h3><?php echo $registrados['primero']; ?></h3>
 
-                          <p>Total Pagados</p>
+                          <p>Total Materias Primer Año</p>
                         </div>
                         <div class="icon">
                           <i class="fa fa-users"></i>
                         </div>
-                        <a href="lista-registrados.php" class="small-box-footer">
+                        <a href="lista-cursos.php" class="small-box-footer">
                           Más Información <i class="fa fa-arrow-circle-right"></i>
                         </a>
                       </div>
@@ -90,12 +90,12 @@
                         <div class="inner">
                           <h3><?php echo $registrados['segundo']; ?></h3>
 
-                          <p>Total Sin Pagar</p>
+                          <p>Total Materias Segundo Año</p>
                         </div>
                         <div class="icon">
-                          <i class="fa fa-user-times"></i>
+                          <i class="fa fa-user"></i>
                         </div>
-                        <a href="lista-registrados.php" class="small-box-footer">
+                        <a href="lista-cursos.php" class="small-box-footer">
                           Más Información <i class="fa fa-arrow-circle-right"></i>
                         </a>
                       </div>
@@ -114,12 +114,12 @@
                         <div class="inner">
                           <h3>$<?php echo round($ganancia, 2); ?></h3>
 
-                          <p>Ganancias Totales</p>
+                          <p>Total Materias Tercer Año</p>
                         </div>
                         <div class="icon">
-                          <i class="fa fa-usd"></i>
+                          <i class="fa fa-graduation-cap"></i>
                         </div>
-                        <a href="lista-registrados.php" class="small-box-footer">
+                        <a href="lista-cursos.php" class="small-box-footer">
                           Más Información <i class="fa fa-arrow-circle-right"></i>
                         </a>
                       </div>
@@ -127,7 +127,7 @@
         </div>
 
 </section>
-       
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

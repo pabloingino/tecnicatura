@@ -16,8 +16,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Crear Invitados
-        <small>llena el formulario para añadir un invitado</small>
+        Crear profesores
+        <small>llena el formulario para añadir un profesor</small>
       </h1>
     </section>
 
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group">
                                           <label for="apellido_profesor">Apellido:</label>
-                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Nombre" >
+                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Apellido" >
                                     </div>
                                     <div class="form-group">
                                         <label for="dni_profesor">DNI: </label>
