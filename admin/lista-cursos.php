@@ -41,30 +41,31 @@
                 <tbody>
                         <?php
                             try {
-                                $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, nombre_invitado, apellido_invitado ";
-                                $sql .= " FROM eventos ";
-                                $sql .= " INNER JOIN categoria_evento ";
-                                $sql .= " ON  eventos.id_cat_evento=categoria_evento.id_categoria ";
-                                $sql .= " INNER JOIN invitados ";
-                                $sql .= " ON eventos.id_inv=invitados.invitado_id ";
-                                $sql .= " ORDER BY evento_id ";
+                                $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                                $sql .= " FROM cursos ";
+                                $sql .= " INNER JOIN materias ";
+                                $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                                $sql .= " INNER JOIN profesores ";
+                                $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                                $sql .= " ORDER BY  idCurso";
                                 $resultado = $conn->query($sql);
                             } catch (Exception $e) {
                                 $error = $e->getMessage();
                                 echo $error;
                             }
-                            while($eventos = $resultado->fetch_assoc() ) { ?>
+                            while($cursos = $resultado->fetch_assoc() ) { ?>
                                 <tr>
-                                    <td><?php echo $eventos['nombre_evento']; ?></td>
-                                    <td><?php echo $eventos['fecha_evento']; ?></td>
-                                    <td><?php echo $eventos['hora_evento']; ?></td>
-                                    <td><?php echo $eventos['cat_evento']; ?></td>
-                                    <td><?php echo $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']; ?></td>
+                                    <td><?php echo $cursos['nombreMateria']; ?></td>
+                                    <td><?php echo $cursos['diaCurso']; ?></td>
+                                    <td><?php echo $cursos['horaCurso']; ?></td>
+                                    <td><?php echo $cursos['añoCurso']; ?></td>
+                                    <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                                    <td><?php echo $cursos['cuatrimestre']; ?></td>
                                     <td>
-                                        <a href="editar-evento.php?id=<?php echo $eventos['evento_id'] ?>" class="btn bg-orange btn-flat margin">
+                                        <a href="editar-curso.php?id=<?php echo $cursos['idCurso']; ?>" class="btn bg-orange btn-flat margin">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="#" data-id="<?php echo $eventos['evento_id']; ?>" data-tipo="evento" class="btn bg-maroon bnt-flat margin borrar_registro">
+                                        <a href="#" data-id="<?php echo $cursos['idCurso']; ?>" data-tipo="curso" class="btn bg-maroon bnt-flat margin borrar_registro">
                                             <i class="fa fa-trash"></i>
                                         </a>
 

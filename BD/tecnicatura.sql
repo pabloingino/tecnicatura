@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tecnicatura`
 --
+DROP DATABASE IF EXISTS `tecnicatura`; 
 CREATE DATABASE IF NOT EXISTS `tecnicatura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `tecnicatura`;
 

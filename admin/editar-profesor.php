@@ -21,8 +21,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Crear Invitados
-        <small>llena el formulario para añadir un invitado</small>
+        Crear Profesores
+        <small>modifique el formulario para editar un profesor</small>
       </h1>
     </section>
 
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                           <label for="apellido_profesor">Apellido:</label>
-                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Apellido">
+                                          <input type="text" class="form-control" id="apellido_profesor" name="apellido_profesor" placeholder="Apellido" value="<?php echo $profesor['apellidoProfesor']; ?>">
                                     </div>
                                     <div class="form-group">
                                       <label for="dni_profesor">DNI: </label>
