@@ -14,14 +14,14 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
-        <?php /*
-            $archivo = basename($_SERVER['PHP_SELF']);
-            $pagina = str_replace(".php", "", $archivo);
-            if($pagina == 'invitados' || $pagina == 'index'){
-              <!-- echo '<link rel="stylesheet" href="css/colorbox.css">'; -->
-            } else if($pagina == 'conferencia') {
-              <!-- echo '<link rel="stylesheet" href="css/lightbox.css">'; -->
-            } */
+        <?php
+             $archivo = basename($_SERVER['PHP_SELF']);
+             $pagina = str_replace(".php", "", $archivo);
+             if($pagina == 'noticias' || $pagina == 'index'){
+              echo '<link rel="stylesheet" href="css/colorbox.css">';
+             } else if($pagina == 'conferencia') {
+                echo '<link rel="stylesheet" href="css/lightbox.css">';
+             }
         ?>
 
 

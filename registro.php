@@ -1,7 +1,6 @@
 <?php include_once 'includes/templates/header-section.php'; ?>
 
-        <sectiysql
-        on class="seccion contenedor">
+        <section class="seccion contenedor">
             <h2>Registro de Usuarios</h2>
             <form id="registro" class="registro" action="mail.php" method="post">
                 <div id="datos_usuario" class="registro caja clearfix">
