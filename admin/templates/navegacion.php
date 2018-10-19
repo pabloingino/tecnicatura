@@ -99,8 +99,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="lista-registrados.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
-          <li><a href="crear-registro.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
+          <li><a href="lista-novedades.php"><i class="fa fa-list-ul" aria-hidden="true"></i> Ver Todos</a></li>
+          <li><a href="crear-novedad.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
 

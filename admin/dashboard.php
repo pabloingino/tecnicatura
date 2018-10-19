@@ -106,13 +106,13 @@
                         $sql = "SELECT COUNT(idCurso) AS tercero FROM cursos WHERE añoCurso =  3";
                         $resultado = $conn->query($sql);
                         $registrados = $resultado->fetch_assoc();
-                        $ganancia = $registrados['tercero'];
+
 
                     ?>
                      <!-- small box -->
                       <div class="small-box bg-green">
                         <div class="inner">
-                          <h3>$<?php echo round($ganancia, 2); ?></h3>
+                          <h3><?php echo $registrados['tercero']; ?></h3>
 
                           <p>Total Materias Tercer Año</p>
                         </div>

@@ -68,7 +68,7 @@
 <?php
     $archivo = basename($_SERVER['PHP_SELF']);
     $pagina = str_replace(".php", "", $archivo);
-    if($pagina == 'invitados' || $pagina == 'index'){
+    if($pagina == 'noticias' || $pagina == 'index'){
       echo '<script src="js/jquery.colorbox-min.js"></script>';
       echo '<script src="js/jquery.waypoints.min.js"></script>';
     } else if($pagina == 'conferencia') {
