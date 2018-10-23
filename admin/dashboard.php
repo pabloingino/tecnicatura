@@ -23,11 +23,11 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row">
+        <!-- <div class="row">
             <div class="box-body chart-responsive">
               <div class="chart" id="grafica-registros" style="height: 300px;"></div>
             </div>
-        </div>
+        </div> -->
 
 
         <h2 class="page-header">Resumen de Registros</h2>
