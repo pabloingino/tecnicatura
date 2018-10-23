@@ -94,6 +94,7 @@
                                   <input type="hidden" name="registro" value="actualizar">
                                   <input type="hidden" name="id_registro" value="<?php echo $materia['idMaterias']; ?>">
                                   <button type="submit" class="btn btn-primary" id="crear_registro">Añadir</button>
+                                  <a href="lista-materias.php"><button type="button" class="btn btn-primary">Salir</button></a>
                               </div>
                         </form>
                     </div>
