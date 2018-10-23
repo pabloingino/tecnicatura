@@ -13,13 +13,15 @@ if($_POST['registro'] == 'nuevo'){
     $nombre = $_POST['nombreCarrera'];
     $descripcion = $_POST['descripCarrera'];
     $directorio = "../img/programa_carrera/";
+    $tipo = $_FILES['programaCarrera']['type'];
 
     if(!is_dir($directorio)){
         mkdir($directorio, 0755, true);
     }
+    
 
     if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
-        $imagen_url = $_FILES['programaCarrera']['name'];
+        $archivo_url = $_FILES['programaCarrera']['name'];
         $imagen_resultado = "Se subió correctamente";
     } else {
         $respuesta = array(
@@ -29,7 +31,7 @@ if($_POST['registro'] == 'nuevo'){
 
     try {
         $stmt = $conn->prepare('INSERT INTO carreras (nombreCarrera, descripCarrera, programaCarrera) VALUES (?, ?, ?) ');
-        $stmt->bind_param("sss", $nombre, $descripcion, $imagen_url );
+        $stmt->bind_param("sss", $nombre, $descripcion, $archivo_url );
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
         if($stmt->affected_rows) {
@@ -64,7 +66,7 @@ if($_POST['registro'] == 'actualizar'){
     }
 
     if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
-        $imagen_url = $_FILES['programaCarrera']['name'];
+        $archivo_url = $_FILES['programaCarrera']['name'];
         $imagen_resultado = "Se subió correctamente";
     } else {
         $respuesta = array(
@@ -77,7 +79,7 @@ if($_POST['registro'] == 'actualizar'){
 
             // con imagen
             $stmt = $conn->prepare('UPDATE carreras SET nombreCarrera = ?, descripCarrera = ?, programaCarrera = ? WHERE idCarreras = ? ');
-            $stmt->bind_param("sssi", $nombre, $descripcion, $imagen_url,  $id_registro);
+            $stmt->bind_param("sssi", $nombre, $descripcion, $archivo_url,  $id_registro);
 
         } else {
             // sin imagen
