@@ -73,10 +73,11 @@
                                                   </select>
                                                 <?php } ?>
                                           <?php } if ($level == 0) {?>
-                                                <select id="superadmin" name="superadmin" value="-Any-" disabled>
+                                                <select id="superadmin" name="superadmin" value="-Any-" hidden>
                                                    <option value="1">Si</option>
                                                    <option value="0" selected>No</option>
                                                 </select>
+                                                <span>No</span>
                                           <?php } ?>
 
 
