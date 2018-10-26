@@ -18,7 +18,7 @@
                     </div>
                     <div class="campo">
                         <label for="consulta">Ingresa tu consulta aca:</label>
-                        <textarea name="consulta" rows="8" cols="127"></textarea>
+                        <textarea name="consulta" rows="8" cols="105"></textarea>
 
                     </div>
                     <div id="error"></div>

@@ -52,7 +52,7 @@
                     <a href="/tecnicatura/admin/login.php">Admin</a>
                     <a href="carreras.php">Carreras</a>
                     <a href="horarios.php">Alumnos</a>
-                    <a href="invitados.php">Noticias</a>
+                    <a href="noticias.php">Noticias</a>
                     <a href="registro.php">Contacto</a>
                 </nav>
             </div><!--.contenedor-->
