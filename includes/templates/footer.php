@@ -1,24 +1,39 @@
-<footer class="site-footer">
-    <div class="contenedor clearfix">
-          <!-- <div class="footer-informacion">
-              <h3>Sobre <span>tech camp</span></h3>
-              <p>Praesent rutrum efficitur pharetra. Vivamus scelerisque pretium velit, id tempor turpis pulvinar et. Ut bibendum finibus massa non molestie. Curabitur urna metus, placerat gravida lacus ut, lacinia congue orci. Maecenas luctus mi at ex blandit vehicula. Morbi porttitor tempus euismod.</p>
+<?php
+    try {
+      require_once('includes/funciones/bd_conexion.php');
+      $sql4 = "SELECT * FROM `datosinstituto` WHERE  idDatos = '1'";
+      $resultado4 = $conn->query($sql4);
+    } catch (Exception $e) {
+      $error = $e->getMessage();
+    }
+ ?>
+ <?php while($datos = $resultado4->fetch_assoc() ){ ?>
+     <footer class="site-footer">
+      <div class="contenedor clearfix">
+            <div class="footer-informacion">
+                <h3>Contactanos</h3>
+                <p><i class="fa fa-home"></i><?php echo " " . $datos['direccionInstituto'] . " " . $datos['numeroCasa'] . " CP. " . $datos['codigoPostal'] . " " . $datos['localidadInstituto']; ?><p>
+                <p><i class="fa fa-envelope-o"></i><?php echo " " . $datos['emailInstituto']; ?><p>
+                <p><i class="fa fa-phone-square"></i><?php echo " " . $datos['telefonoInstituto']; ?><p>
           </div>
-          <div class="ultimos-tweets">
-              <h3>Últimos <span>tweets</span></h3>
-               <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#fe4918" href="https://twitter.com/">Tweets by DP Solutions</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
+ <?php } ?>
           <div class="menu">
               <h3>Redes <span>sociales</span></h3>
               <nav class="redes-sociales">
-                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="https://www.facebook.com/pg/IFTS-N4-Instituto-De-Formaci%C3%B3n-T%C3%A9cnica-Superior-354972001274378/about/?ref=page_internal"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                   <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                   <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-linkedin " aria-hidden="true"></i></a>
               </nav>
           </div>
-    </div> -->
+          <div class="footer-informacion">
+            <div class="logo">
+              <a href="index.php">
+                  <img src="img/logo.png" alt="logo ifts">
+              </a>
+            </div>
+          </div>
+        </div>
 
     <p class="copyright">
       Todos los derechos Reservados DP SOLUTIONS 2018.
@@ -27,12 +42,10 @@
 
 
           <!-- Begin MailChimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-          <style type="text/css">
-          	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-          	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-          	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-          </style>
+          <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+          <!-- <style type="text/css"> -->
+
+          <!-- </style>
       <div style="display:none;">
           <div id="mc_embed_signup">
           <form action="//easy-webdev.us11.list-manage.com/subscribe/post?u=b3bb37039b6fbf3db0c1a8331&amp;id=20463b69f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -48,15 +61,23 @@
           		<div class="response" id="mce-error-response" style="display:none"></div>
           		<div class="response" id="mce-success-response" style="display:none"></div>
           	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3bb37039b6fbf3db0c1a8331_20463b69f2" tabindex="-1" value=""></div>
+              <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3bb37039b6fbf3db0c1a8331_20463b69f2" tabindex="-1" value=""></div>
               <div class="clear"><input type="submit" value="Suscribirse" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
               </div>
           </form>
-          </div>
-          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+          </div> -->
+          <!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script> -->
           <!--End mc_embed_signup-->
-        </div>
+        <!-- </div> -->
 </footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

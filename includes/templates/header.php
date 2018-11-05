@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
         <?php /*
@@ -75,10 +76,11 @@
                             <p class="ciudad"><i class="fa fa-map-marker" aria-hidden="true"></i> Buenos Aires, AR</p>
                         </div><!--.informacion-evento-->
 
-                        <h1 class="nombre-sitio">ifts n°4</h1>
-                        <p class="slogan"><span>Instituto de Formacion Tecnica Superior</span></p>
+                        <!-- <h1 class="nombre-sitio">ifts n°4</h1>
+                        <p class="slogan"><span>Instituto de Formacion Tecnica Superior</span></p> -->
                     </div>
 
                 </div>
-            </div><!--.hero-->
+                
+            <!-- </div>-->
         </header>

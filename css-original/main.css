@@ -398,7 +398,6 @@ div.logo img {
   width: 70px;
   height: 70px;
 }
-
 @media only screen and (min-width:768px) {
   div.logo {
     width:30%;
@@ -432,34 +431,16 @@ nav.navegacion-principal a:hover {
   border: 2px solid #0b9444;
   color: #0b9444;
 } */
-
 nav.navegacion-principal a:last-child:hover {
   color: #ffffff;
 }
-nav.navegacion-footer {
-  float: left;
-}
-nav.navegacion-footer h3 {
-  padding: 0;
-  margin: 10px 0 0 0;
-  text-align: center;
-
-
-}
-nav.navegacion-footer a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.4em;
-
-}
-
 @media only screen and (min-width:768px) {
   nav.navegacion-principal {
     width: 70%;
     float: right;
     text-align: right;
     display: block;
-}
+  }
   nav.navegacion-principal a {
     padding: 10px 10px;
     display: inline-block;
@@ -534,11 +515,6 @@ nav.menu-programa {
 }
 @media only screen and (min-width:768px) {
     nav.menu-programa {
-        display: table;
-    }
-}
-@media only screen and (min-width:768px) {
-    nav.navegacion-footer a{
         display: table;
     }
 }
@@ -854,9 +830,7 @@ footer {
   background-color: #353535;
   padding-top: 40px;
   margin-top: 20px;
-  position: relative;
 }
-
 footer .contenedor > div {
   color: #ffffff;
   padding: 0px 20px;

@@ -1,22 +1,21 @@
 <?php  if($cuatri == 1):?>
 <?php try {
-      require_once('includes/funciones/bd_conexion.php');
-      $sql = "SELECT idCurso, diaCurso, horaCurso, añoCurso, ordenDia, cuatrimestre, nombreMateria, nombreProfesor ";
-      $sql .= "FROM cursos ";
-      $sql .= "INNER JOIN materias ";
-      $sql .= "ON cursos.materiaCurso=materias.idMaterias ";
-      $sql .= "INNER JOIN profesores ";
-      $sql .= "ON cursos.profesorCurso=profesores.idProfesor ";
-      $sql .= "WHERE añoCurso = 3 AND cuatrimestre = 1 ";
-      $sql .= "ORDER BY ordenDia";
-      $resultado = $conn->query($sql);
+      $sql3 = "SELECT idCurso, diaCurso, horaCurso, añoCurso, ordenDia, cuatrimestre, nombreMateria, nombreProfesor ";
+      $sql3 .= "FROM cursos ";
+      $sql3 .= "INNER JOIN materias ";
+      $sql3 .= "ON cursos.materiaCurso=materias.idMaterias ";
+      $sql3 .= "INNER JOIN profesores ";
+      $sql3 .= "ON cursos.profesorCurso=profesores.idProfesor ";
+      $sql3 .= "WHERE añoCurso = 3 AND cuatrimestre = 1 ";
+      $sql3 .= "ORDER BY ordenDia";
+      $resultado3 = $conn->query($sql3);
     } catch (Exception $e) {
       $error = $e->getMessage();
     }?>
       <div class="calendario">
 
 
-        <?php while($cursos = $resultado->fetch_all(MYSQLI_ASSOC) ) { ?>
+        <?php while($cursos = $resultado3->fetch_all(MYSQLI_ASSOC) ) { ?>
 
           <?php $dias = array(); ?>
           <?php foreach($cursos as $curso) {

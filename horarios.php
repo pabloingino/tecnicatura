@@ -1,4 +1,6 @@
-<?php include_once 'includes/templates/header-section.php'; ?>
+<?php include_once 'includes/templates/header-section.php';
+      require_once('includes/funciones/bd_conexion.php');
+?>
 
 
 
@@ -20,7 +22,7 @@
 
                 </form>
                 <?php
-                  $anio = 0;          
+                  $anio = 0;
                   if (isset($_POST['submit'])) {
                     $anio = $_POST['anio'];
                     $cuatri = $_POST['cuatrimestre'];
@@ -50,6 +52,8 @@
                   <!-- ACA SE TERMINA EL AÑO -->
 
       </section>
+      <!-- <section class="seccion contenedor">
 
+      </section> -->
 
     <?php include_once 'includes/templates/footer.php'; ?>
