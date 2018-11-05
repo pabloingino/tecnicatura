@@ -103,6 +103,19 @@
           <li><a href="crear-novedad.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-address-book" aria-hidden="true"></i>
+          <span>Informacion</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="informacion.php"><i class="fa fa-edit" aria-hidden="true"></i> Editar Info</a></li>
+
+        </ul>
+      </li>
 
       <?php if($_SESSION['nivel'] == 1): ?>
       <li class="treeview">
@@ -118,6 +131,7 @@
           <li><a href="crear-admin.php"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar</a></li>
         </ul>
       </li>
+
     <?php endif; ?>
 
       <!-- <li class="treeview">
