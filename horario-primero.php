@@ -11,7 +11,9 @@
       $resultado1 = $conn->query($sql1);
     } catch (Exception $e) {
       $error = $e->getMessage();
-    }?>
+    }
+
+    ?>
       <!-- VARIABLES PARA VALIDAR LA CANTIDAD DE CLASES POR DIA -->
       <?php
         $lu = 0;
@@ -81,7 +83,7 @@
       </div> <!--.calendario-->
       <?php } ?>
 
-      <?php $conn->close();  ?>
+      <?php //$conn->close();  ?>
       <?php endif; ?>
   <?php if($cuatri == 2): ?>
     <?php try {
@@ -145,6 +147,6 @@
           </div> <!--.calendario-->
           <?php } ?>
 
-          <?php $conn->close();  ?>
+          <?php// $conn->close();  ?>
 
     <?php endif; ?>

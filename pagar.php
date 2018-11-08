@@ -18,7 +18,7 @@ require 'includes/paypal.php';
 
 
 if(isset($_POST['submit'])):
-  echo "Estoy en el array";exit; 
+  echo "Estoy en el array";exit;
   $nombre = $_POST['nombre'];
   $apellido = $_POST['apellido'];
   $email = $_POST['email'];
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])):
     $stmt->execute();
     $ID_registro = $stmt->insert_id;
     $stmt->close();
-    $conn->close();
+    //$conn->close();
     //header('Location: validar_registro.php?exitoso=1');
   } catch (Exception $e) {
     $error = $e->getMessage();

@@ -59,7 +59,7 @@
                         </div> <!--.calendario-->
                         <?php } ?>
 
-                        <?php $conn->close();  ?>
+                        <?php //$conn->close();  ?>
                         <?php endif; ?>
                     <?php if($cuatri == 2): ?>
                       <?php try {
@@ -123,6 +123,6 @@
                             </div> <!--.calendario-->
                             <?php } ?>
 
-                            <?php $conn->close();  ?>
+                            <?php //$conn->close();  ?>
 
                       <?php endif; ?>

@@ -39,5 +39,5 @@
                  </section> <!-- END .invitados -->
 
 <?php
-  $conn->close();
+  //$conn->close();
 ?>

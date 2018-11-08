@@ -86,7 +86,7 @@
                  <?php } ?>
 
             <?php
-               $conn->close();
+               //$conn->close();
             ?>
 
 
