@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">Maneja los cursos en esta sección</h3>
+        <h3 class="box-title">Estos son todos los cursos disponibles</h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
