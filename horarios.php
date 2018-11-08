@@ -50,6 +50,7 @@
                     <?php include_once 'horario-tercero.php'; ?>
                   <?php endif; ?>
                   <!-- ACA SE TERMINA EL AÑO -->
+                  <?php include_once 'horario-tabla.php'; ?>
 
       </section>
       <!-- <section class="seccion contenedor">

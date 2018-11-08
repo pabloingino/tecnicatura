@@ -15,7 +15,6 @@
             <th>Año</th>
             <th>Profesor</th>
             <th>cuatrimestre</th>
-            <th>Acciones</th>
           </tr>
           </thead>
           <tbody>
@@ -61,15 +60,6 @@
                                           }
                                   ?>
                               </td>
-                              <td>
-                                  <a href="editar-curso.php?id=<?php echo $cursos['idCurso']; ?>" class="btn bg-orange btn-flat margin">
-                                      <i class="fa fa-pencil"></i>
-                                  </a>
-                                  <a href="#" data-id="<?php echo $cursos['idCurso']; ?>" data-tipo="curso" class="btn bg-maroon bnt-flat margin borrar_registro">
-                                      <i class="fa fa-trash"></i>
-                                  </a>
-
-                              </td>
                           </tr>
                       <?php }  ?>
           </tbody>
@@ -81,7 +71,6 @@
             <th>Año</th>
             <th>Profesor</th>
             <th>cuatrimestre</th>
-            <th>Acciones</th>
           </tr>
           </tfoot>
         </table>
