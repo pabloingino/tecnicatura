@@ -6,11 +6,12 @@
           session_destroy();
       }
     }
+
         include_once 'funciones/funciones.php';
         include_once 'templates/header.php';
 ?>
 <body class="hold-transition login-page">
-
+  
 <div class="login-box">
   <div class="login-logo">
     <a href="../index.php"><b>IFTS | </b>N°4</a>
