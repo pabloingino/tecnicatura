@@ -298,6 +298,12 @@ div.hero-section {
 div.contenido-header {
   padding-top: 40px;
 }
+
+.linea {
+  height: 3px;
+  margin-bottom: 3px;
+  background-color:  #0b9444;
+}
 @media only screen and (min-width:768px) {
   div.contenido-header {
     padding-top: 10px;

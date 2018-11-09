@@ -11,9 +11,18 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+        <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+        <!-- <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/fontawesome-iconpicker.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/AdminLTE.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/skins/_all-skins.min.css"> -->
+        <!-- <link rel="stylesheet" href="css/icheck.css"> -->
 
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
         <?php
              $archivo = basename($_SERVER['PHP_SELF']);
              $pagina = str_replace(".php", "", $archivo);
