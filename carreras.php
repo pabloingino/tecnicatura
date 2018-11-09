@@ -27,8 +27,11 @@
                       <h2><?php echo $carrera['nombreCarrera']; ?></h2>
                       <p><?php echo $carrera['descripCarrera']; ?></p>
                     <a href="/tecnicatura/img/programa_carrera/<?php echo $carrera['programaCarrera']; ?>" download="programa_<?php echo $carrera['programaCarrera']; ?>"><button class="button">PROGRAMA</button></a>
+                    <div class="linea">
 
 
+                    <span></span>
+                    </div>
                      <?php endforeach; ?>
                  </div> <!--.calendario-->
                  <?php } ?>
