@@ -6,196 +6,492 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <table id="" class="display" style="width:100%">
-        <thead>
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Primer Año Primer Cuatrimestre</caption>
+          <thead>
+          <tr>
+            <th style="display: none;">Orden</th>
+            <th>Dia</th>
+            <th>Materia</th>
+            <th>Hora</th>
+            <th>Año</th>
+            <th>Profesor</th>
+            <th>cuatrimestre</th>
+            <th>Programa</th>
+          </tr>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, programaMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE añoCurso = 1  AND cuatrimestre = 1";
+                          $sql .= " ORDER BY ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                              <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                              <td><?php echo $cursos['diaCurso']; ?></td>
+                              <td><?php echo $cursos['nombreMateria']; ?></td>
+                              <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Salary</th>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
-        </thead>
-        <tbody>
+          </tfoot>
+        </table>
+        <!-- TABLA DE PRIMER AÑO SEGUNDO CUATRIMESTRE  -->
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Primer Año Segundo Cuatrimestre</caption>
+          <thead>
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>$320,800</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE  añoCurso = 1  AND cuatrimestre = 2";
+                          $sql .= " ORDER BY  ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                            <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                            <td><?php echo $cursos['diaCurso']; ?></td>
+                            <td><?php echo $cursos['nombreMateria']; ?></td>
+                            <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>$433,060</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </tfoot>
+        </table>
+        <!-- TABLA DE SEGUNDO AÑO PRIMERO CUATRIMESTRE  -->
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Segundo Año Primer Cuatrimestre</caption>
+          <thead>
             <tr>
-                <td>Sonya Frost</td>
-                <td>Software Engineer</td>
-                <td>Edinburgh</td>
-                <td>23</td>
-                <td>$103,600</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE  añoCurso = 2  AND cuatrimestre = 1";
+                          $sql .= " ORDER BY  ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                            <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                            <td><?php echo $cursos['diaCurso']; ?></td>
+                            <td><?php echo $cursos['nombreMateria']; ?></td>
+                            <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <td>Quinn Flynn</td>
-                <td>Support Lead</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>$342,000</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </tfoot>
+        </table>
+        <!-- TABLA DE SEGUNDO AÑO SEGUNDO CUATRIMESTRE  -->
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Segundo Año Segundo Cuatrimestre</caption>
+          <thead>
             <tr>
-                <td>Dai Rios</td>
-                <td>Personnel Lead</td>
-                <td>Edinburgh</td>
-                <td>35</td>
-                <td>$217,500</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE  añoCurso = 2  AND cuatrimestre = 2";
+                          $sql .= " ORDER BY  ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                            <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                            <td><?php echo $cursos['diaCurso']; ?></td>
+                            <td><?php echo $cursos['nombreMateria']; ?></td>
+                            <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <td>Gavin Joyce</td>
-                <td>Developer</td>
-                <td>Edinburgh</td>
-                <td>42</td>
-                <td>$92,575</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </tfoot>
+        </table>
+        <!-- TABLA DE TERCER AÑO PRIMER CUATRIMESTRE  -->
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Tercer Año Primer Cuatrimestre</caption>
+          <thead>
             <tr>
-                <td>Martena Mccray</td>
-                <td>Post-Sales support</td>
-                <td>Edinburgh</td>
-                <td>46</td>
-                <td>$324,050</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE  añoCurso = 3  AND cuatrimestre = 1";
+                          $sql .= " ORDER BY  ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                            <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                            <td><?php echo $cursos['diaCurso']; ?></td>
+                            <td><?php echo $cursos['nombreMateria']; ?></td>
+                            <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <td>Jennifer Acosta</td>
-                <td>Junior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>43</td>
-                <td>$75,650</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
+          </tfoot>
+        </table>
+        <!-- TABLA DE TERCERO AÑO SEGUNDO CUATRIMESTRE  -->
+        <table class="table display tablaHorarios" style="width:100%">
+          <caption>Tercer Año Segundo Cuatrimestre</caption>
+          <thead>
             <tr>
-                <td>Shad Decker</td>
-                <td>Regional Director</td>
-                <td>Edinburgh</td>
-                <td>51</td>
-                <td>$183,000</td>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
-        </tbody>
-        <tfoot>
+          </thead>
+          <tbody>
+                  <?php
+                      try {
+                          $sql = "SELECT idCurso, diaCurso, ordenDia, horaCurso, añoCurso, cuatrimestre, nombreMateria, nombreProfesor,  apellidoProfesor";
+                          $sql .= " FROM cursos ";
+                          $sql .= " INNER JOIN materias ";
+                          $sql .= " ON  cursos.materiaCurso=materias.idMaterias ";
+                          $sql .= " INNER JOIN profesores ";
+                          $sql .= " ON cursos.profesorCurso=profesores.idProfesor ";
+                          $sql .= " WHERE  añoCurso = 3  AND cuatrimestre = 2";
+                          $sql .= " ORDER BY  ordenDia ";
+                          $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                          $error = $e->getMessage();
+                          echo $error;
+                      }
+                      while($cursos = $resultado->fetch_assoc() ) { ?>
+                          <tr>
+                            <td style="display: none;"><?php echo $cursos['ordenDia']; ?></td>
+                            <td><?php echo $cursos['diaCurso']; ?></td>
+                            <td><?php echo $cursos['nombreMateria']; ?></td>
+                            <td><?php echo $cursos['horaCurso']; ?></td>
+                              <td><?php
+                                        if ($cursos['añoCurso'] == 1) {
+                                            echo "Primero";
+                                        }
+                                        if ($cursos['añoCurso'] == 2) {
+                                            echo "Segundo";
+                                        }
+                                        if ($cursos['añoCurso'] == 3) {
+                                            echo "Tercero";
+                                        }
+                                    ?>
+                              </td>
+                              <td><?php echo $cursos['nombreProfesor'] . " " . $cursos['apellidoProfesor']; ?></td>
+                              <td>
+                                <?php
+                                          if ($cursos['cuatrimestre'] == 1) {
+                                              echo "Primero";
+                                          }
+                                          if ($cursos['cuatrimestre'] == 2) {
+                                              echo "Segundo";
+                                          }
+                                  ?>
+                              </td>
+                              <td>
+                                  <a href="img/programa_materia/<?php echo $cursos['programaMateria']; ?>" class="btn btn-flat margin">
+                                    <i class="glyphicon glyphicon-cloud-download"></i>
+                                  </a>
+                              </td>
+                          </tr>
+                      <?php }  ?>
+          </tbody>
+          <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Salary</th>
+              <th style="display: none;">Orden</th>
+              <th>Dia</th>
+              <th>Materia</th>
+              <th>Hora</th>
+              <th>Año</th>
+              <th>Profesor</th>
+              <th>cuatrimestre</th>
+              <th>Programa</th>
             </tr>
-        </tfoot>
-    </table><table id="" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Jena Gaines</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>30</td>
-                <td>$90,560</td>
-            </tr>
-            <tr>
-                <td>Haley Kennedy</td>
-                <td>Senior Marketing Designer</td>
-                <td>London</td>
-                <td>43</td>
-                <td>$313,500</td>
-            </tr>
-            <tr>
-                <td>Tatyana Fitzpatrick</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>19</td>
-                <td>$385,750</td>
-            </tr>
-            <tr>
-                <td>Michael Silva</td>
-                <td>Marketing Designer</td>
-                <td>London</td>
-                <td>66</td>
-                <td>$198,500</td>
-            </tr>
-            <tr>
-                <td>Bradley Greer</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>41</td>
-                <td>$132,000</td>
-            </tr>
-            <tr>
-                <td>Angelica Ramos</td>
-                <td>Chief Executive Officer (CEO)</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$1,200,000</td>
-            </tr>
-            <tr>
-                <td>Suki Burks</td>
-                <td>Developer</td>
-                <td>London</td>
-                <td>53</td>
-                <td>$114,500</td>
-            </tr>
-            <tr>
-                <td>Prescott Bartlett</td>
-                <td>Technical Author</td>
-                <td>London</td>
-                <td>27</td>
-                <td>$145,000</td>
-            </tr>
-            <tr>
-                <td>Timothy Mooney</td>
-                <td>Office Manager</td>
-                <td>London</td>
-                <td>37</td>
-                <td>$136,200</td>
-            </tr>
-            <tr>
-                <td>Bruno Nash</td>
-                <td>Software Engineer</td>
-                <td>London</td>
-                <td>38</td>
-                <td>$163,500</td>
-            </tr>
-            <tr>
-                <td>Hermione Butler</td>
-                <td>Regional Director</td>
-                <td>London</td>
-                <td>47</td>
-                <td>$356,250</td>
-            </tr>
-            <tr>
-                <td>Lael Greer</td>
-                <td>Systems Administrator</td>
-                <td>London</td>
-                <td>21</td>
-                <td>$103,500</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
-    </table>
+          </tfoot>
+        </table>
+
       </div>
       <!-- /.box-body -->
     </div>

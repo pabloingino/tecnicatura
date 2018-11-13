@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-        <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="css/datatables.min.css"/> -->
+        <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
         <!-- <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"> -->
         <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
         <!-- <link rel="stylesheet" href="css/fontawesome-iconpicker.min.css"> -->

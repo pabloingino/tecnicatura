@@ -21,7 +21,7 @@
                         <textarea name="consulta" rows="8" cols="105"></textarea>
 
                     </div>
-                    <div id="error"></div>
+                    <!-- <div id="error"></div> -->
 
                 </div> <!--#datos_usuario -->
                 <div class="box-footer">

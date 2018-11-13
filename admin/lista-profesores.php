@@ -33,6 +33,7 @@
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>DNI</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
