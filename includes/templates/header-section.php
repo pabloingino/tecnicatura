@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- <link rel="stylesheet" href="css/datatables.min.css"/> -->
         <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="css/colorbox.css">
         <!-- <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"> -->
         <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
         <!-- <link rel="stylesheet" href="css/fontawesome-iconpicker.min.css"> -->

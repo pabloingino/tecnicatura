@@ -1,7 +1,7 @@
 <?php
     $servidor = 'localhost';
-    $userdb = 'campus_user';
-    $passdb = 'admin1234';
+    $userdb = 'root';
+    $passdb = '';
     $dbname = 'tecnicatura';
     $conn = new mysqli($servidor, $userdb, $passdb, $dbname);
 
