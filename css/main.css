@@ -287,6 +287,7 @@ div.hero {
   /* height: 500px; */
   background-position: top center;
   background-size: cover;
+  margin-bottom: 55px;
 }
 div.hero-section {
 
@@ -299,9 +300,9 @@ div.contenido-header {
   padding-top: 40px;
 }
 .slider {
-	width: 95%;
-	margin: auto;
-	overflow: hidden;
+	width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 .slider ul {
 	display: flex;
