@@ -11,12 +11,13 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
-        <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- <link rel="stylesheet" href="css/datatables.min.css"/> -->
         <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" href="css/colorbox.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="css/dataTables.bootstrap.min.css"> -->
         <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
         <!-- <link rel="stylesheet" href="css/fontawesome-iconpicker.min.css"> -->
@@ -51,6 +52,7 @@
                     <a href="index.php">
                         <img src="img/logo.png" alt="logo instituto">
                     </a>
+                    <h5>IFTS | N°4</h5>
                 </div>
 
                 <div class="menu-movil">

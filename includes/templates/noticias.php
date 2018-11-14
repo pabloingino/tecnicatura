@@ -37,7 +37,3 @@
 
                      </ul> <!-- END lista-invitados -->
                  </section> <!-- END .invitados -->
-
-<?php
-  //$conn->close();
-?>

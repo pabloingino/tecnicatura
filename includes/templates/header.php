@@ -12,17 +12,17 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
-
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 
-        <?php /*
+        <?php
             $archivo = basename($_SERVER['PHP_SELF']);
             $pagina = str_replace(".php", "", $archivo);
             if($pagina == 'invitados' || $pagina == 'index'){
-              <!-- echo '<link rel="stylesheet" href="css/colorbox.css">'; -->
+               echo '<link rel="stylesheet" href="css/colorbox.css">';
             } else if($pagina == 'conferencia') {
-              <!-- echo '<link rel="stylesheet" href="css/lightbox.css">'; -->
-            } */
+               echo '<link rel="stylesheet" href="css/lightbox.css">';
+            }
         ?>
 
 
@@ -30,10 +30,10 @@
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <!-- <body class="<?php //echo $pagina; ?>"> -->
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <?php echo $pagina; ?>">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
     <header class="site-header">
       <div class="barra">
             <div class="contenedor clearfix">
@@ -41,6 +41,7 @@
                     <a href="index.php">
                         <img src="img/logo.png" alt="logo ifts">
                     </a>
+                    <h5>IFTS | N°4</h5>
                 </div>
 
                 <div class="menu-movil">
