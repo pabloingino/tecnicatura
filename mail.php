@@ -9,7 +9,7 @@
                           <body>
                           <h1>Hola amigos!</h1>
                           <p>
-                          <b>Bienvenidos a mi correo electrónico de prueba</b>. Estoy encantado de tener tantos lectores. Este cuerpo del mensaje es del artículo de envío de mails por PHP. Habría que cambiarlo para poner tu propio cuerpo. Por cierto, cambia también las cabeceras del mensaje.
+                          <b>Esto es una prueba
                           </p>
                           </body>
                           </html>
@@ -34,5 +34,5 @@
               //direcciones que recibirán copia oculta
               $headers .= "Bcc:pablo.ingino@gmail.com\r\n";
 
-              mail($destinatario,$asunto,$cuerpo,$headers) 
+              mail($destinatario,$asunto,$cuerpo,$headers)
 ?>
