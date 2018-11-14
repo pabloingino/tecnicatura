@@ -62,6 +62,15 @@
 
 
             <div class="hero">
+              <div class="slider">
+                  <ul>
+                    <li><img src="img\portadaIFTS.jpg" alt=""> </li>
+                    <li><img src="img\portadaIFTS_1.jpg" alt=""> </li>
+                    <li><img src="img\portadaIFTS_2.jpg" alt=""> </li>
+                    <li><img src="img\portadaIFTS_3.jpg" alt=""> </li>
+                  </ul>
+
+              </div>
                 <div class="contenido-header">
                     <!-- <nav class="redes-sociales">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
