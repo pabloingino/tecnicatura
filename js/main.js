@@ -51,7 +51,7 @@ $(function() {
     });
 
     // Lettering
-    $('.nombre-sitio').lettering();
+    //$('.nombre-sitio').lettering();
 
     // Agregar clase a Menú
     $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
@@ -118,17 +118,6 @@ $(function() {
             offset: '60%'
         });
     }
-
-
-
-    //Cuenta Regresiva
-
-    $('.cuenta-regresiva').countdown('2017/12/10 09:00:00', function(event){
-      $('#dias').html(event.strftime('%D'));
-      $('#horas').html(event.strftime('%H'));
-      $('#minutos').html(event.strftime('%M'));
-      $('#segundos').html(event.strftime('%S'));
-    });
 
     // Colorbox
 
