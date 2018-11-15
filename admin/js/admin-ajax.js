@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $('#guardar-registro').on('submit', function(e) {
             e.preventDefault();
-            
+
             var datos = $(this).serializeArray();
-            
+
             $.ajax({
                 type: $(this).attr('method'),
                 data: datos,
@@ -29,13 +29,13 @@ $(document).ready(function() {
             })
     });
     // Se ejecuta cuando hay un archivo
-    
-    
+
+
     $('#guardar-registro-archivo').on('submit', function(e) {
             e.preventDefault();
-            
+
             var datos = new FormData(this);
-            
+
             $.ajax({
                 type: $(this).attr('method'),
                 data: datos,
@@ -54,7 +54,14 @@ $(document).ready(function() {
                           'Se guardó correctamente',
                           'success'
                         )
-                    } else {
+                    } if (resultado.respuesta_pdf != 'exito') {
+                      swal(
+                        'Error!',
+                        'El archivo debe ser .pdf',
+                        'error'
+                      )
+                    }
+                    else {
                         swal(
                           'Error!',
                           'Hubo un error',
@@ -64,17 +71,17 @@ $(document).ready(function() {
                 }
             })
     });
-    
-    
-    
+
+
+
     // Eliminar un registro
-    
+
     $('.borrar_registro').on('click', function(e) {
         e.preventDefault();
-        
+
         var id = $(this).attr('data-id');
         var tipo = $(this).attr('data-tipo');
-        
+
         swal({
           title: '¿Estás seguro?',
           text: "Un registro eliminado no se puede recuperar",
@@ -109,11 +116,11 @@ $(document).ready(function() {
                               'error'
                             )
                         }
-                        
+
                     }
                 })
         });
     });
-    
-    
+
+
 });

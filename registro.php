@@ -2,7 +2,7 @@
 
         <section class="seccion contenedor">
             <h2>Registro de Usuarios</h2>
-            <form id="registro" class="registro" action="mail.php" method="post">
+          <form id="registro" class="registro" action="mail.php" method="post">
                 <div id="datos_usuario" class="registro caja clearfix">
                     <div class="campo">
                         <label for="nombre">Nombre:</label>
@@ -18,7 +18,7 @@
                     </div>
                     <div class="campo">
                         <label for="consulta">Ingresa tu consulta aca:</label>
-                        <textarea name="consulta" rows="8" cols="105"></textarea>
+                        <textarea name="consulta" rows="9" cols="110"></textarea>
 
                     </div>
                     <!-- <div id="error"></div> -->

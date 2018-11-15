@@ -18,16 +18,16 @@ if($_POST['registro'] == 'nuevo'){
     if(!is_dir($directorio)){
         mkdir($directorio, 0755, true);
     }
-    
 
-    if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
-        $archivo_url = $_FILES['programaCarrera']['name'];
-        $imagen_resultado = "Se subió correctamente";
-    } else {
-        $respuesta = array(
-            'respuesta' => error_get_last()
-        );
-    }
+
+              if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
+                  $archivo_url = $_FILES['programaCarrera']['name'];
+                  $imagen_resultado = "Se subió correctamente";
+              } else {
+                  $respuesta = array(
+                      'respuesta' => error_get_last()
+                  );
+              }
 
     try {
         $stmt = $conn->prepare('INSERT INTO carreras (nombreCarrera, descripCarrera, programaCarrera) VALUES (?, ?, ?) ');
