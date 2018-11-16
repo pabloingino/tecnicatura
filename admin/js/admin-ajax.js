@@ -48,20 +48,21 @@ $(document).ready(function() {
                 success: function(data) {
                     console.log(data);
                     var resultado = data;
+                    if(resultado.respuesta == 'pdf') {
+                        swal(
+                          'Error!',
+                          'Hubo un error, debe subir solo pdf',
+                          'error'
+                        )
+                    }
                     if(resultado.respuesta == 'exito') {
                         swal(
                           'Correcto',
                           'Se guardó correctamente',
                           'success'
                         )
-                    } if (resultado.respuesta_pdf != 'exito') {
-                      swal(
-                        'Error!',
-                        'El archivo debe ser .pdf',
-                        'error'
-                      )
                     }
-                    else {
+                    if(resultado.respuesta == 'error') {
                         swal(
                           'Error!',
                           'Hubo un error',

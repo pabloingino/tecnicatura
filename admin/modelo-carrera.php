@@ -19,15 +19,23 @@ if($_POST['registro'] == 'nuevo'){
         mkdir($directorio, 0755, true);
     }
 
+    if ($tipo=="application/pdf"){
+        if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
+            $archivo_url = $_FILES['programaCarrera']['name'];
+            $imagen_resultado = "Se subió correctamente";
+          } else {
+            $respuesta = array(
+                'respuesta' => error_get_last()
+              );
+            }
+    }
+     if ($tipo!="application/pdf"){
+      $respuesta = array(
+          'respuesta' => 'pdf',);
 
-              if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
-                  $archivo_url = $_FILES['programaCarrera']['name'];
-                  $imagen_resultado = "Se subió correctamente";
-              } else {
-                  $respuesta = array(
-                      'respuesta' => error_get_last()
-                  );
-              }
+        die(json_encode($respuesta));
+      }
+
 
     try {
         $stmt = $conn->prepare('INSERT INTO carreras (nombreCarrera, descripCarrera, programaCarrera) VALUES (?, ?, ?) ');
@@ -60,19 +68,31 @@ if($_POST['registro'] == 'actualizar'){
   $descripcion = $_POST['descripCarrera'];
   $id_registro = $_POST['id_registro'];
   $directorio = "../img/programa_carrera/";
+  $tipo = $_FILES['programaCarrera']['type'];
 
     if(!is_dir($directorio)){
         mkdir($directorio, 0755, true);
     }
 
-    if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
-        $archivo_url = $_FILES['programaCarrera']['name'];
-        $imagen_resultado = "Se subió correctamente";
-    } else {
-        $respuesta = array(
-            'respuesta' => error_get_last()
-        );
-    }
+
+        if ($tipo=="application/pdf"){
+            if(move_uploaded_file($_FILES['programaCarrera']['tmp_name'], $directorio . $_FILES['programaCarrera']['name'])) {
+                $archivo_url = $_FILES['programaCarrera']['name'];
+                $imagen_resultado = "Se subió correctamente";
+              } else {
+                $respuesta = array(
+                    'respuesta' => error_get_last()
+                  );
+                }
+        }
+         if ($tipo!="application/pdf"){
+          $respuesta = array(
+              'respuesta' => 'pdf',);
+
+            die(json_encode($respuesta));
+          }
+
+
 
     try {
         if($_FILES['programaCarrera']['size'] > 0 ) {
