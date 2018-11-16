@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2018 a las 13:55:08
+-- Tiempo de generación: 16-11-2018 a las 16:45:58
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -62,15 +62,8 @@ CREATE TABLE `carreras` (
 --
 
 INSERT INTO `carreras` (`idCarreras`, `nombreCarrera`, `descripCarrera`, `programaCarrera`) VALUES
-(1, 'Tecnicatura Superior En Analisis de Sistemas', 'La Tecnicatura Superior en Análisis de Sistemas se plantea como finalidad general una formación integral que promueva en los estudiantes la construcción de las herramientas intelectuales y prácticas necesarias para la operación, programación y el análisis de sistemas informáticos, fortalecer su identidad como analistas de sistemas y la elaboración de perspectivas éticas en el desarrollo de su tarea. Se propone la confluencia de saberes y habilidades técnicas con el conocimiento profundo y amplio que requiere el desempeño en este campo laboral.\r\nAlcances de la Titulación: El Técnico Superior en Análisis de Sistemas egresado de esta carrera podrá desempeñarse en empresas de informática y/o áreas de sistemas de organismos gubernamentales, empresas y organizaciones del tercer sector así como también en forma independiente.', 'santinoiann.jpg'),
-(2, 'Tecnicatura en telecomunicaciones', 'La Tecnicatura Superior en Análisis de Sistemas se plantea como finalidad general una formación integral que promueva en los estudiantes la construcción de las herramientas intelectuales y prácticas necesarias para la operación, programación y el análisis de sistemas informáticos, fortalecer su identidad como analistas de sistemas y la elaboración de perspectivas éticas en el desarrollo de su tarea. Se propone la confluencia de saberes y habilidades técnicas con el conocimiento profundo y amplio que requiere el desempeño en este campo laboral. Alcances de la Titulación: El Técnico Superior en Análisis de Sistemas egresado de esta carrera podrá desempeñarse en empresas de informática y/o áreas de sistemas de organismos gubernamentales, empresas y organizaciones del tercer sector así como también en forma independiente.', 'index.php'),
-(8, 'Administracion', 'sdagsagsag', NULL),
-(9, 'prueba_2', 'sdgsfdgsfdhs', 'instituto.pdf'),
-(11, 'prueba_3', 'sdgsfdgsfdhs', NULL),
-(12, 'prueba_5', 'fFHSHDGHSDG', NULL),
-(14, 'dsasdgsdg', 'asdgasdg', 'instituto.pdf'),
-(15, 'sdfsdgsd', 'dsgsddgsdgs<', 'instituto.pdf'),
-(17, 'dsfsdg', 'sagsafg', 'instituto.pdf');
+(1, 'Tecnicatura Superior En Analisis de Sistemas', 'La Tecnicatura Superior en Análisis de Sistemas se plantea como finalidad general una formación integral que promueva en los estudiantes la construcción de las herramientas intelectuales y prácticas necesarias para la operación, programación y el análisis de sistemas informáticos, fortalecer su identidad como analistas de sistemas y la elaboración de perspectivas éticas en el desarrollo de su tarea. Se propone la confluencia de saberes y habilidades técnicas con el conocimiento profundo y amplio que requiere el desempeño en este campo laboral.\r\nAlcances de la Titulación: El Técnico Superior en Análisis de Sistemas egresado de esta carrera podrá desempeñarse en empresas de informática y/o áreas de sistemas de organismos gubernamentales, empresas y organizaciones del tercer sector así como también en forma independiente.', 'instituto.pdf'),
+(2, 'Tecnicatura en telecomunicaciones', 'La Tecnicatura Superior en Análisis de Sistemas se plantea como finalidad general una formación integral que promueva en los estudiantes la construcción de las herramientas intelectuales y prácticas necesarias para la operación, programación y el análisis de sistemas informáticos, fortalecer su identidad como analistas de sistemas y la elaboración de perspectivas éticas en el desarrollo de su tarea. Se propone la confluencia de saberes y habilidades técnicas con el conocimiento profundo y amplio que requiere el desempeño en este campo laboral. Alcances de la Titulación: El Técnico Superior en Análisis de Sistemas egresado de esta carrera podrá desempeñarse en empresas de informática y/o áreas de sistemas de organismos gubernamentales, empresas y organizaciones del tercer sector así como también en forma independiente.', 'ResolucionAS.pdf');
 
 -- --------------------------------------------------------
 
@@ -141,7 +134,9 @@ CREATE TABLE `materias` (
 --
 
 INSERT INTO `materias` (`idMaterias`, `nombreMateria`, `programaMateria`, `carrera`) VALUES
-(4, 'Contabilidad', 'instituto.pdf', 1);
+(4, 'Contabilidad', 'CONTABILIDAD BASICA Y DE COSTOS.pdf', 1),
+(5, 'Seminario 2', 'SEMINARIO II.pdf', 1),
+(6, 'Seminario 1', 'SEMINARIO I.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -292,7 +287,7 @@ ALTER TABLE `alumnos`
 -- AUTO_INCREMENT de la tabla `carreras`
 --
 ALTER TABLE `carreras`
-  MODIFY `idCarreras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idCarreras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `cursos`
@@ -310,7 +305,7 @@ ALTER TABLE `datosinstituto`
 -- AUTO_INCREMENT de la tabla `materias`
 --
 ALTER TABLE `materias`
-  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `novedades`
