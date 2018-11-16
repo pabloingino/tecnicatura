@@ -17,19 +17,29 @@ if($_POST['registro'] == 'nuevo'){
     $nombre = $_POST['nombre_materia'];
     $carrera = $_POST['carrera'];
     $directorio = "../img/programa_materia/";
-
+    $tipo = $_FILES['archivo_programa']['type'];
     if(!is_dir($directorio)){
         mkdir($directorio, 0755, true);
     }
 
-    if(move_uploaded_file($_FILES['archivo_programa']['tmp_name'], $directorio . $_FILES['archivo_programa']['name'])) {
-        $imagen_url = $_FILES['archivo_programa']['name'];
-        $programa_resultado = "Se subió correctamente";
-    } else {
-        $respuesta = array(
-            'respuesta' => error_get_last()
-        );
+    if ($tipo=="application/pdf"){
+      if(move_uploaded_file($_FILES['archivo_programa']['tmp_name'], $directorio . $_FILES['archivo_programa']['name'])) {
+          $imagen_url = $_FILES['archivo_programa']['name'];
+          $programa_resultado = "Se subió correctamente";
+      } else {
+          $respuesta = array(
+              'respuesta' => error_get_last()
+          );
+      }
     }
+     if ($tipo!="application/pdf"){
+      $respuesta = array(
+          'respuesta' => 'pdf',);
+
+        die(json_encode($respuesta));
+      }
+
+
 
     try {
         $stmt = $conn->prepare('INSERT INTO materias (nombreMateria, programaMateria, carrera) VALUES (?, ?, ?) ');
@@ -62,19 +72,30 @@ if($_POST['registro'] == 'actualizar'){
     $carrera = $_POST['carrera'];
     $id_registro = $_POST['id_registro'];
     $directorio = "../img/programa_materia/";
+    $tipo = $_FILES['archivo_programa']['type'];
 
     if(!is_dir($directorio)){
         mkdir($directorio, 0755, true);
     }
 
-    if(move_uploaded_file($_FILES['archivo_programa']['tmp_name'], $directorio . $_FILES['archivo_programa']['name'])) {
-        $imagen_url = $_FILES['archivo_programa']['name'];
-        $imagen_resultado = "Se subió correctamente";
-    } else {
-        $respuesta = array(
-            'respuesta' => error_get_last()
-        );
+    if ($tipo=="application/pdf"){
+      if(move_uploaded_file($_FILES['archivo_programa']['tmp_name'], $directorio . $_FILES['archivo_programa']['name'])) {
+          $imagen_url = $_FILES['archivo_programa']['name'];
+          $imagen_resultado = "Se subió correctamente";
+      } else {
+          $respuesta = array(
+              'respuesta' => error_get_last()
+          );
+      }
     }
+     if ($tipo!="application/pdf"){
+      $respuesta = array(
+          'respuesta' => 'pdf',);
+
+        die(json_encode($respuesta));
+      }
+
+
 
     try {
         if($_FILES['archivo_programa']['size'] > 0 ) {
