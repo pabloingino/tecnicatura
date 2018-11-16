@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2018 a las 16:45:58
+-- Tiempo de generación: 16-11-2018 a las 19:09:35
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -88,8 +88,37 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`idCurso`, `materiaCurso`, `profesorCurso`, `diaCurso`, `ordenDia`, `horaCurso`, `añoCurso`, `cuatrimestre`) VALUES
-(1, 4, 1, 'Miercoles', 3, '4', 1, 1),
-(2, 4, 1, 'Martes', 2, '1', 2, 2);
+(3, 7, 2, 'Lunes', 1, '1', 1, 1),
+(4, 12, 7, 'Lunes', 1, '2', 1, 1),
+(5, 8, 2, 'Martes', 2, '1', 1, 1),
+(6, 9, 3, 'Miercoles', 3, '1', 1, 1),
+(7, 10, 5, 'Jueves', 4, '1', 1, 1),
+(8, 11, 6, 'Viernes', 5, '1', 1, 1),
+(9, 13, 8, 'Lunes', 1, '1', 1, 2),
+(10, 12, 7, 'Lunes', 1, '2', 1, 2),
+(11, 14, 9, 'Martes', 2, '1', 1, 2),
+(12, 15, 2, 'Miercoles', 3, '1', 1, 2),
+(13, 16, 10, 'Jueves', 4, '1', 1, 2),
+(14, 18, 11, 'Lunes', 1, '1', 2, 1),
+(15, 19, 12, 'Martes', 2, '1', 2, 1),
+(16, 20, 10, 'Miercoles', 3, '1', 2, 1),
+(17, 21, 10, 'Jueves', 4, '1', 2, 1),
+(18, 22, 9, 'Viernes', 5, '1', 2, 1),
+(19, 23, 8, 'Lunes', 1, '1', 2, 2),
+(20, 24, 12, 'Martes', 2, '1', 2, 2),
+(21, 25, 3, 'Miercoles', 3, '1', 2, 2),
+(22, 26, 9, 'Jueves', 4, '1', 2, 2),
+(23, 27, 13, 'Viernes', 5, '1', 2, 2),
+(24, 28, 14, 'Lunes', 1, '1', 3, 1),
+(25, 29, 15, 'Martes', 2, '1', 3, 1),
+(26, 34, 9, 'Miercoles', 3, '1', 3, 1),
+(27, 30, 9, 'Jueves', 4, '1', 3, 1),
+(28, 31, 3, 'Viernes', 5, '1', 3, 1),
+(29, 32, 15, 'Lunes', 1, '1', 3, 2),
+(30, 33, 10, 'Martes', 2, '1', 3, 2),
+(31, 34, 9, 'Miercoles', 3, '1', 3, 2),
+(32, 35, 5, 'Jueves', 4, '1', 3, 2),
+(33, 36, 3, 'Viernes', 5, '1', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -134,9 +163,36 @@ CREATE TABLE `materias` (
 --
 
 INSERT INTO `materias` (`idMaterias`, `nombreMateria`, `programaMateria`, `carrera`) VALUES
-(4, 'Contabilidad', 'CONTABILIDAD BASICA Y DE COSTOS.pdf', 1),
-(5, 'Seminario 2', 'SEMINARIO II.pdf', 1),
-(6, 'Seminario 1', 'SEMINARIO I.pdf', 1);
+(7, 'Lógica computacional', 'LOGICA COMPUTACIONAL.pdf', 1),
+(8, 'Diagramación lógica', 'DIAGRAMACIÓ LÓGICA.pdf', 1),
+(9, 'Introducción al estudio de las Tic', 'INTRODUCCION AL ESTUDIO DE LAS TICS.pdf', 1),
+(10, 'Arquitectura de computadoras', 'ARQUITECTURA DE COMPUTADORAS.pdf', 1),
+(11, 'Contabilidad básica y de costos', 'CONTABILIDAD BASICA Y DE COSTOS.pdf', 1),
+(12, 'Inglés Técnico', 'INGLES TECNICO.pdf', 1),
+(13, 'Algebra Lineal', 'ALGEBRA LINEAL.pdf', 1),
+(14, 'Paradigmas de Prog ramación', 'PARADIGMAS DE PROGRAMACIÓN.pdf', 1),
+(15, 'Estructura de datos', 'ESTRUCTURA DE DATOS.pdf', 1),
+(16, 'Práctica Profesional I', 'PRACTICA PROFESIONAL I.pdf', 1),
+(17, 'Estructura de las Org anizaciones', 'ESTRUCTURA DE LAS ORGANIZACIONES.pdf', 1),
+(18, 'Planeamiento y Ctrol de gestión', 'PLANEAMIENTO Y CONTROL DE GESTION.pdf', 1),
+(19, 'Programación Aplicada', 'PROGRAMACION APLICADA.pdf', 1),
+(20, 'Ingeniería de Software', 'INGENIERIA DE SOFTWARE.pdf', 1),
+(21, 'Análisis de sistemas', 'ANALISIS DE SISTEMAS.pdf', 1),
+(22, 'Sistemas operativos', 'SISTEMAS OPERATIVOS Y COMUNICACIONES.pdf', 1),
+(23, 'Cálculo Numérico', 'CÁLCULO NUMÉRICO.pdf', 1),
+(24, 'Base de datos', 'BASE DE DATOS.pdf', 1),
+(25, 'Práctica Profesional II', 'PRACTICA PROFESIONAL II.pdf', 1),
+(26, 'Gestión de Proyectos', 'GESTION DE PROYECTOS INFORMATICOS.pdf', 1),
+(27, 'Diseño de Sistemas', 'DISEÑO DE SISTEMAS.pdf', 1),
+(28, 'Estadística Aplicada', 'ESTADISTICA APLICADA.pdf', 1),
+(29, 'Herramientas de Gestión', 'HERRAMIENTAS DE GESTION ORGANIZACIONAL.pdf', 1),
+(30, 'Seminario 1', 'SEMINARIO I.pdf', 1),
+(31, 'Laboratorio de Redes', 'LABORATORIO DE REDES.pdf', 1),
+(32, 'Legislación Aplicables a las TICS', 'LEGISLACION APLICABLE A LA TECNOLOGIA.pdf', 1),
+(33, 'Seguridad Informática', 'SEGURIDAD INFORMÁTICA.pdf', 1),
+(34, 'Práctica Profesional III', 'PRACTICA PROFESIONAL III.pdf', 1),
+(35, 'Seminario 2', 'SEMINARIO II.pdf', 1),
+(36, 'Desarrollo aplicaciones Web', 'DESARROLLO DE APLICACIONES WEB.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +215,7 @@ CREATE TABLE `novedades` (
 
 INSERT INTO `novedades` (`idNovedad`, `tituloNovedad`, `textNovedad`, `fechaNovedad`, `isActive`) VALUES
 (2, 'Tenemos Pagina Web Nueva', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras enim dolor, bibendum varius risus at, egestas molestie quam. In ultrices auctor ex eget sodales. Cras ac viverra augue, lobortis luctus orci. Morbi vitae nibh id magna elementum consequat vel ac turpis. Sed interdum nulla a ex auctor semper.', '2018-10-18', 1),
-(4, 'El Miercoles no hay clases', '', '2018-10-19', 1),
+(4, 'El Miercoles no hay clases', 'El miercoles no hay clases manga de sopencos', '2018-10-19', 1),
 (5, 'Se termina el año', 'El caos reina en este fin de curso. Los exámenes finales terminaron el 1 de junio y los centros educativos no saben qué hacer con los alumnos que han aprobado. ¡Manda narices! Resulta que el estudiante que saca buenas notas es un estorbo porque los profesores se tienen que volcar y dar clases de refuerzo a los que han suspendido.\r\nPerdonen mi ignorancia pero no consigo entender por qué en el sistema educativo español siempre se toman medidas para perjudicar al buen alumno y favorecer al mediocre. De los brillantes, ya ni hablamos. ¡Así nos va!', '2018-11-14', 1);
 
 -- --------------------------------------------------------
@@ -181,7 +237,19 @@ CREATE TABLE `profesores` (
 --
 
 INSERT INTO `profesores` (`idProfesor`, `nombreProfesor`, `apellidoProfesor`, `dniProfesor`) VALUES
-(1, 'Pablo', 'Ingino', 30654538);
+(2, 'Cristina', 'Ferro Croce', 0),
+(3, 'Sebastian', 'Cohen', 0),
+(5, 'Gustavo', 'Virtos', 0),
+(6, 'Lino', 'Osorio', 0),
+(7, 'Andrea', 'Mackiewicz', 0),
+(8, 'Gabriela', 'Crespo', 0),
+(9, 'Silvia', 'Cirello', 0),
+(10, 'Ruben', 'Hawryluk', 0),
+(11, 'Maria Jose', 'Galeano', 0),
+(12, 'Luis', 'Perez', 0),
+(13, 'Leandro', 'Alvarez', 0),
+(14, 'Gustavo', 'Berbery', 0),
+(15, 'Matias', 'Perez Carresso', 0);
 
 -- --------------------------------------------------------
 
@@ -293,7 +361,7 @@ ALTER TABLE `carreras`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `datosinstituto`
@@ -305,7 +373,7 @@ ALTER TABLE `datosinstituto`
 -- AUTO_INCREMENT de la tabla `materias`
 --
 ALTER TABLE `materias`
-  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idMaterias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `novedades`
@@ -317,7 +385,7 @@ ALTER TABLE `novedades`
 -- AUTO_INCREMENT de la tabla `profesores`
 --
 ALTER TABLE `profesores`
-  MODIFY `idProfesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idProfesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
